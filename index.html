@@ -331,25 +331,24 @@
               <input type="tel" id="phone" name="phone" placeholder="+91 98765 43210" required/>
             </div>
           </div>
-          <div class="form-group">
-            <label for="interest">I'm interested in</label>
-            <select id="interest" name="interest">
-              <option value="">Select a product&hellip;</option>
-              <optgroup label="Sonoray DS Series">
-                <option>Sonoray DS 30 Plus</option>
-                <option>Sonoray DS 50</option>
-                <option>Sonoray DS 50 Plus</option>
-                <option>Sonoray DS 100 Plus</option>
-                <option>Sonoray DS 150 Plus</option>
-                <option>Sonoray DS 200 Plus</option>
-              </optgroup>
-              <optgroup label="SonoScape Systems">
-                <option>SonoScape E2V</option>
-                <option>SonoScape S12</option>
-                <option>SonoScape Propet 60</option>
-              </optgroup>
-              <option>Full Product Demo / Site Visit</option>
-            </select>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="classification">Product Classification</label>
+              <select id="classification" name="classification">
+                <option value="">Select Category&hellip;</option>
+                <option value="sonoray">Sonoray DS Series</option>
+                <option value="sonoscape">SonoScape Systems</option>
+                <option value="alerio">Alerio X-Ray Systems</option>
+                <option value="handheld">Handheld Ultrasound (Edan/Vet)</option>
+                <option value="others">Other Inquiries</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="interest">Specific Product</label>
+              <select id="interest" name="interest">
+                <option value="">Select classification first&hellip;</option>
+              </select>
+            </div>
           </div>
           <div class="form-group">
             <label for="message">Message</label>

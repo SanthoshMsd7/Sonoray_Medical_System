@@ -141,3 +141,65 @@ if (portalLinks.length > 0) {
     });
   });
 }
+
+// Dependent Dropdowns Logic
+const classificationSelect = document.getElementById('classification');
+const productSelect = document.getElementById('interest');
+
+const productsByClassification = {
+  'sonoray': [
+    'Sonoray DS 30 Plus',
+    'Sonoray DS 50',
+    'Sonoray DS 50 Plus',
+    'Sonoray DS 100 Plus',
+    'Sonoray DS 150 Plus',
+    'Sonoray DS 200 Plus'
+  ],
+  'sonoscape': [
+    'SonoScape E2V',
+    'SonoScape S12',
+    'SonoScape Propet 60'
+  ],
+  'alerio': [
+    'Alerio Smart 1600 (Portable)',
+    'Alerio Smart 2800 (Portable)',
+    'Alerio Smart 4200 (Mobile)',
+    'Alerio Smart 5000 (Mobile)',
+    'ERAY Gold (DR)',
+    'AeroX DR (Konica Minolta)'
+  ],
+  'handheld': [
+    'Edan Nano C5 EXP',
+    'Edan Nano L12 EXP',
+    'Wired Endorectal Probe',
+    'Farm Scanner',
+    'Interchangeable Probes System',
+    'C10 RS Microconvex Wireless'
+  ],
+  'others': [
+    'Full Product Demo / Site Visit',
+    'Probe Repair Services',
+    'General Inquiry'
+  ]
+};
+
+if (classificationSelect && productSelect) {
+  classificationSelect.addEventListener('change', function() {
+    const selected = this.value;
+    productSelect.innerHTML = '';
+    
+    if (selected && productsByClassification[selected]) {
+      productsByClassification[selected].forEach(prod => {
+        const opt = document.createElement('option');
+        opt.value = prod;
+        opt.textContent = prod;
+        productSelect.appendChild(opt);
+      });
+    } else {
+      const opt = document.createElement('option');
+      opt.value = "";
+      opt.textContent = "Select classification first…";
+      productSelect.appendChild(opt);
+    }
+  });
+}
