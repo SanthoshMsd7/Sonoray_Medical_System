@@ -131,13 +131,11 @@ if (portalLinks.length > 0) {
       // Show corresponding pane
       const targetId = link.getAttribute('data-target');
       const targetPane = document.getElementById(targetId);
-      if (targetPane) {
-        targetPane.style.display = 'block';
-        // Scroll to top of portal content smoothly if on mobile
-        if (window.innerWidth <= 900) {
-          targetPane.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        if (targetPane) {
+          targetPane.style.display = 'block';
+          // Always reset scroll to top of the page when changing categories
+          window.scrollTo({ top: 0, behavior: 'smooth' });
         }
-      }
     });
   });
 }
