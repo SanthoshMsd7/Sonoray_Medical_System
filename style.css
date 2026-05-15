@@ -190,15 +190,16 @@ body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--tex
 .about-visual { position: relative; }
 .about-img { width: 100%; border-radius: 20px; object-fit: cover; max-height: 500px; box-shadow: var(--shadow); }
 .about-img.about-logo-img {
-  width: auto;
-  max-width: 320px;
-  max-height: 180px;
+  width: 100%;
+  max-width: 520px;
+  height: 340px;
   display: block;
-  margin: 40px auto;
-  background: #fff;
-  padding: 30px;
+  margin: 0 auto;
+  background: #ffffff;
+  padding: 40px;
   object-fit: contain;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  border: 1px solid var(--border);
+  box-shadow: 0 15px 45px rgba(139,26,53,0.06);
 }
 .card-float {
   position: absolute; background: #fff; border: 1.5px solid var(--border);
