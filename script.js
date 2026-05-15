@@ -188,6 +188,14 @@ if (classificationSelect && productSelect) {
     const selected = this.value;
     productSelect.innerHTML = '';
     
+    // Add a default placeholder even after classification is selected
+    const placeholder = document.createElement('option');
+    placeholder.value = "";
+    placeholder.textContent = selected ? "Select machine..." : "Select classification first...";
+    placeholder.disabled = true;
+    placeholder.selected = true;
+    productSelect.appendChild(placeholder);
+
     if (selected && productsByClassification[selected]) {
       productsByClassification[selected].forEach(prod => {
         const opt = document.createElement('option');
@@ -195,11 +203,6 @@ if (classificationSelect && productSelect) {
         opt.textContent = prod;
         productSelect.appendChild(opt);
       });
-    } else {
-      const opt = document.createElement('option');
-      opt.value = "";
-      opt.textContent = "Select classification first…";
-      productSelect.appendChild(opt);
     }
   });
 }
