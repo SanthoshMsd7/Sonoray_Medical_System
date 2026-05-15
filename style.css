@@ -151,10 +151,16 @@ body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--tex
 .solution-card {
   background: #fff; border: 1.5px solid var(--border2);
   border-radius: var(--radius); padding: 32px;
-  transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   box-shadow: var(--shadow2);
+  cursor: pointer;
 }
-.solution-card:hover { transform: translateY(-6px); border-color: rgba(204,0,0,0.35); box-shadow: 0 16px 50px rgba(204,0,0,0.12); }
+.solution-card:hover {
+  transform: translateY(-12px) scale(1.02);
+  border-color: rgba(139,26,53,0.4);
+  box-shadow: 0 25px 70px rgba(139,26,53,0.15);
+  background: linear-gradient(135deg, #ffffff, rgba(204,0,0,0.02));
+}
 .solution-icon {
   width: 52px; height: 52px; border-radius: 14px;
   background: rgba(204,0,0,0.08); display: flex; align-items: center; justify-content: center;
@@ -172,10 +178,15 @@ body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--tex
 .product-card {
   background: #fff; border: 1.5px solid var(--border2);
   border-radius: var(--radius); overflow: hidden;
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   box-shadow: var(--shadow2); position: relative;
+  cursor: pointer;
 }
-.product-card:hover { transform: translateY(-6px); box-shadow: 0 20px 60px rgba(204,0,0,0.15); }
+.product-card:hover {
+  transform: translateY(-12px) scale(1.02);
+  box-shadow: 0 25px 70px rgba(139,26,53,0.18);
+  border-color: rgba(139,26,53,0.4);
+}
 .product-card.featured { border-color: rgba(204,0,0,0.45); box-shadow: 0 0 40px rgba(204,0,0,0.12); }
 .product-badge { position: absolute; top: 16px; left: 16px; background: linear-gradient(135deg,var(--red),var(--red-dark)); color: #fff; font-size: 11px; font-weight: 800; padding: 4px 14px; border-radius: 50px; z-index: 2; letter-spacing: 0.5px; }
 .product-img { width: 100%; height: 220px; object-fit: cover; }
@@ -225,11 +236,18 @@ body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--tex
 .tech-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
 .tech-feature {
   padding: 32px; background: #fff; border: 1.5px solid var(--border2);
-  border-radius: var(--radius); transition: 0.3s; box-shadow: var(--shadow2);
+  border-radius: var(--radius); transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+  box-shadow: var(--shadow2);
   position: relative; overflow: hidden;
+  cursor: pointer;
 }
 .tech-feature::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; background:linear-gradient(90deg,var(--red),#ff6666); opacity:0; transition:0.3s; }
-.tech-feature:hover { border-color: rgba(204,0,0,0.3); transform: translateY(-4px); box-shadow: 0 12px 40px rgba(204,0,0,0.12); }
+.tech-feature:hover {
+  transform: translateY(-12px) scale(1.02);
+  border-color: rgba(139,26,53,0.4);
+  box-shadow: 0 25px 70px rgba(139,26,53,0.15);
+  background: linear-gradient(135deg, #ffffff, rgba(204,0,0,0.02));
+}
 .tech-feature:hover::before { opacity: 1; }
 .tech-num { font-family: 'Outfit', sans-serif; font-size: 48px; font-weight: 900; color: rgba(204,0,0,0.1); margin-bottom: 12px; line-height: 1; }
 .tech-feature h3 { font-size: 18px; font-weight: 700; margin-bottom: 10px; color: var(--text); }
@@ -417,9 +435,13 @@ footer * { --text2: rgba(245,230,208,0.55); }
   display: grid; grid-template-columns: 420px 1fr; gap: 48px; align-items: start;
   background: #fff; border: 1.5px solid var(--border2); border-radius: 20px;
   padding: 36px; margin-bottom: 32px; box-shadow: var(--shadow2);
-  transition: box-shadow 0.3s, border-color 0.3s;
+  transition: all 0.4s ease;
 }
-.prod-detail-card:hover { box-shadow: 0 12px 50px rgba(204,0,0,0.1); border-color: rgba(204,0,0,0.25); }
+.prod-detail-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 60px rgba(139,26,53,0.12);
+  border-color: rgba(139,26,53,0.3);
+}
 .prod-detail-card.reverse { grid-template-columns: 1fr 420px; }
 .prod-detail-card.reverse .prod-detail-img-wrap { order: 2; }
 .prod-detail-card.reverse .prod-detail-content { order: 1; }
