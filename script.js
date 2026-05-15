@@ -176,6 +176,12 @@ const productsByClassification = {
     'Interchangeable Probes System',
     'C10 RS Microconvex Wireless'
   ],
+  'diagnostics': [
+    'Sonodop Vet (BP Doppler)',
+    'Vet ECG (Upcoming)',
+    'Patient Monitor System (Upcoming)',
+    'Endoscope (Upcoming)'
+  ],
   'others': [
     'Full Product Demo / Site Visit',
     'Probe Repair Services',
