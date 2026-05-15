@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <title>Theme Preview: Royal Purple & Platinum</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', sans-serif; background: #0c0a1a; color: #f0eeff; }
+
+    .theme-banner { background: linear-gradient(90deg, #5c2d91, #9b59b6); color: #fff; text-align: center; padding: 10px; font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 15px; letter-spacing: 1px; }
+    .theme-banner span { font-weight: 400; margin-left: 12px; font-size: 13px; opacity: 0.85; }
+
+    nav { background: rgba(12,10,26,0.97); border-bottom: 1px solid rgba(180,140,255,0.15); padding: 0 48px; display: flex; align-items: center; justify-content: space-between; height: 70px; position: sticky; top: 0; z-index: 100; }
+    .nav-logo { font-family: 'Outfit', sans-serif; font-size: 22px; font-weight: 800; color: #b48cff; }
+    .nav-logo span { color: #f0eeff; font-weight: 400; }
+    .nav-links { display: flex; gap: 32px; list-style: none; }
+    .nav-links a { color: #9988bb; text-decoration: none; font-size: 14px; font-weight: 500; }
+    .nav-links a:hover { color: #b48cff; }
+    .btn-nav { background: linear-gradient(135deg, #5c2d91, #9b59b6); color: #fff; border: none; padding: 10px 22px; border-radius: 50px; font-weight: 700; font-size: 14px; cursor: pointer; font-family: 'Outfit', sans-serif; box-shadow: 0 4px 20px rgba(92,45,145,0.5); }
+
+    .hero { min-height: 88vh; display: flex; align-items: center; padding: 80px 48px; background: radial-gradient(ellipse 80% 60% at 65% 40%, rgba(92,45,145,0.2) 0%, transparent 65%), linear-gradient(150deg, #0c0a1a 0%, #140d28 60%, #1a0e35 100%); position: relative; overflow: hidden; }
+    .hero::before { content: ''; position: absolute; width: 600px; height: 600px; border-radius: 50%; background: radial-gradient(circle, rgba(155,89,182,0.12), transparent 70%); top: -150px; right: -100px; }
+    .hero::after { content: ''; position: absolute; width: 1px; height: 100%; background: linear-gradient(to bottom, transparent, rgba(180,140,255,0.08), transparent); left: 50%; top: 0; }
+    .hero-text { max-width: 580px; position: relative; z-index: 2; }
+    .hero-tag { display: inline-block; background: rgba(180,140,255,0.1); border: 1px solid rgba(180,140,255,0.3); color: #c9a8ff; font-size: 12px; font-weight: 700; letter-spacing: 2px; padding: 6px 16px; border-radius: 50px; margin-bottom: 24px; text-transform: uppercase; font-family: 'Outfit', sans-serif; }
+    h1 { font-family: 'Outfit', sans-serif; font-size: clamp(36px, 5vw, 56px); font-weight: 800; line-height: 1.1; color: #f0eeff; margin-bottom: 20px; }
+    h1 span { background: linear-gradient(90deg, #b48cff, #e0c8ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .hero p { color: #9988bb; font-size: 17px; line-height: 1.7; margin-bottom: 36px; }
+    .hero-btns { display: flex; gap: 14px; }
+    .btn-primary { background: linear-gradient(135deg, #5c2d91, #9b59b6); color: #fff; border: none; padding: 14px 32px; border-radius: 50px; font-weight: 800; font-size: 15px; cursor: pointer; font-family: 'Outfit', sans-serif; box-shadow: 0 4px 24px rgba(92,45,145,0.5); }
+    .btn-outline { background: transparent; color: #b48cff; border: 2px solid rgba(180,140,255,0.4); padding: 14px 32px; border-radius: 50px; font-weight: 700; font-size: 15px; cursor: pointer; font-family: 'Outfit', sans-serif; }
+    .hero-stats { display: flex; gap: 40px; margin-top: 56px; }
+    .stat-num { font-family: 'Outfit', sans-serif; font-size: 36px; font-weight: 800; background: linear-gradient(90deg, #b48cff, #e0c8ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .stat-label { font-size: 12px; color: #9988bb; margin-top: 2px; }
+
+    .strip { padding: 60px 48px; background: #100d20; border-top: 1px solid rgba(180,140,255,0.1); }
+    .strip-h2 { font-family: 'Outfit', sans-serif; font-size: 28px; font-weight: 800; color: #f0eeff; margin-bottom: 32px; }
+    .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .card { background: rgba(180,140,255,0.05); border: 1px solid rgba(180,140,255,0.12); border-radius: 16px; padding: 24px; }
+    .card:hover { border-color: rgba(180,140,255,0.3); box-shadow: 0 8px 30px rgba(92,45,145,0.2); }
+    .card-tag { background: linear-gradient(135deg, #5c2d91, #9b59b6); color: #fff; font-size: 11px; font-weight: 800; padding: 4px 12px; border-radius: 50px; display: inline-block; margin-bottom: 12px; font-family: 'Outfit', sans-serif; }
+    .card h3 { font-family: 'Outfit', sans-serif; font-size: 20px; font-weight: 800; color: #f0eeff; margin-bottom: 8px; }
+    .card p { font-size: 13px; color: #9988bb; line-height: 1.5; }
+    .card-img { width: 100%; height: 160px; background: linear-gradient(135deg, rgba(92,45,145,0.15), rgba(155,89,182,0.05)); border-radius: 10px; margin-bottom: 16px; display: flex; align-items: center; justify-content: center; font-size: 40px; border: 1px solid rgba(180,140,255,0.1); }
+    .section-tag { display: inline-block; background: rgba(180,140,255,0.1); border: 1px solid rgba(180,140,255,0.2); color: #b48cff; font-size: 11px; font-weight: 700; letter-spacing: 2px; padding: 5px 14px; border-radius: 50px; margin-bottom: 12px; text-transform: uppercase; font-family: 'Outfit', sans-serif; }
+
+    .contact-strip { padding: 60px 48px; background: linear-gradient(135deg, #140d28, #0c0a1a); border-top: 1px solid rgba(180,140,255,0.1); display: flex; align-items: center; justify-content: space-between; }
+    .contact-strip h2 { font-family: 'Outfit', sans-serif; font-size: 32px; font-weight: 800; color: #f0eeff; }
+    .contact-strip p { color: #9988bb; margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="theme-banner">💜 THEME PREVIEW: ROYAL PURPLE &amp; PLATINUM <span>— Unique &amp; Premium</span></div>
+  <nav>
+    <div class="nav-logo">Sonoray <span>Medical Systems</span></div>
+    <ul class="nav-links">
+      <li><a href="#">Solutions</a></li><li><a href="#">Sonoray</a></li><li><a href="#">SonoScape</a></li><li><a href="#">About</a></li><li><a href="#">Contact</a></li>
+    </ul>
+    <button class="btn-nav">Get a Demo</button>
+  </nav>
+  <section class="hero">
+    <div class="hero-text">
+      <div class="hero-tag">&#9733; Trusted Ultrasound Partner Since 2004</div>
+      <h1>Diagnostic Imaging <span>Trusted by</span> Clinicians Across India</h1>
+      <p>Sonoray Medical Systems delivers advanced ultrasound solutions — from portable Doppler systems to premium cart-based machines — backed by 20+ years of expertise in Chennai.</p>
+      <div class="hero-btns">
+        <button class="btn-primary">Explore Products</button>
+        <button class="btn-outline">Get a Demo</button>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><div class="stat-num">20+</div><div class="stat-label">Years in Business</div></div>
+        <div class="stat"><div class="stat-num">6</div><div class="stat-label">DS Series Models</div></div>
+        <div class="stat"><div class="stat-num">3</div><div class="stat-label">SonoScape Systems</div></div>
+      </div>
+    </div>
+  </section>
+  <section class="strip">
+    <div class="section-tag">Our Products</div>
+    <div class="strip-h2">Sonoray DS Series Highlights</div>
+    <div class="cards">
+      <div class="card"><div class="card-img">🔬</div><div class="card-tag">SONORAY</div><h3>DS 30 Plus</h3><p>Portable B&amp;W ultrasound — ideal for rural clinics and bedside diagnostics.</p></div>
+      <div class="card"><div class="card-img">📡</div><div class="card-tag">SONORAY</div><h3>DS 150 Plus</h3><p>Mid-range colour Doppler with spatial compound imaging and 180° display.</p></div>
+      <div class="card"><div class="card-img">🏆</div><div class="card-tag">SONORAY</div><h3>DS 200 Plus</h3><p>Flagship trolley system with elastography, TAI and 21.5" HD monitor.</p></div>
+    </div>
+  </section>
+  <section class="contact-strip">
+    <div><div class="section-tag">Get in Touch</div><h2>Ready to Transform Your Imaging?</h2><p>Contact us at ultraserve@hotmail.com &nbsp;|&nbsp; +91 99400 10520</p></div>
+    <button class="btn-primary">Request a Demo &rarr;</button>
+  </section>
+</body>
+</html>

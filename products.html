@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Product Portal | Sonoray Medical Systems</title>
+  <meta name="description" content="Explore our comprehensive catalogue of Ultrasound, X-Rays, and Diagnostic products."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css?v=6"/>
+</head>
+<body class="products-page">
+
+  <!-- NAV -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="logo">
+        <img src="sonoray-logo.jpg" alt="Sonoray Medical Systems" class="nav-logo-img"/>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html#solutions">Solutions</a></li>
+        <li><a href="products.html" class="active" style="color: var(--red); font-weight: 800;">Products</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+      <a href="index.html#contact" class="btn btn-primary nav-cta">Get a Demo</a>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobile-menu">
+      <a href="index.html#solutions">Solutions</a>
+      <a href="products.html" style="color: var(--red); font-weight: 800;">Products</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#contact">Contact</a>
+      <a href="index.html#contact" class="btn btn-primary">Get a Demo</a>
+    </div>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <section class="page-header" style="padding: 140px 24px 60px; background: linear-gradient(135deg, var(--red-dark), var(--red)); color: #f5e6d0; text-align: center;">
+    <div class="container">
+      <h1 style="font-family: 'Outfit', sans-serif; font-size: 48px; font-weight: 800; margin-bottom: 16px;">Product Portal</h1>
+      <p style="color: #f7f4f0; font-size: 18px; max-width: 600px; margin: 0 auto; opacity: 0.9;">Explore our comprehensive range of diagnostic equipment, from Ultrasound to Digital X-Rays.</p>
+    </div>
+  </section>
+
+  <!-- PORTAL LAYOUT -->
+  <section class="portal-section" style="padding: 60px 0; background: var(--bg);">
+    <div class="container portal-layout">
+      <!-- SIDEBAR -->
+      <aside class="portal-sidebar">
+        
+        <div class="sidebar-category">
+           <h3>Ultrasound</h3>
+           <ul>
+             <li><a href="#" class="portal-link" data-target="us-handheld">Handheld</a></li>
+             <li><a href="#" class="portal-link active-filter" data-target="us-portable">Portable</a></li>
+             <li><a href="#" class="portal-link" data-target="us-trolley">Trolley</a></li>
+           </ul>
+        </div>
+        
+        <div class="sidebar-category">
+           <h3>X-Rays</h3>
+           <ul>
+             <li><a href="#" class="portal-link" data-target="xr-portable">Portable X-Rays</a></li>
+             <li><a href="#" class="portal-link" data-target="xr-mobile">Mobile X-Rays</a></li>
+             <li><a href="#" class="portal-link" data-target="xr-crdr">CR and DR</a></li>
+           </ul>
+        </div>
+
+        <div class="sidebar-category">
+           <h3>Diagnostic Products</h3>
+           <ul>
+             <li><a href="#" class="portal-link" data-target="diag-vetbp">Veterinary BP Doppler</a></li>
+             <li><a href="#" class="portal-link" data-target="diag-vetecg">Vet ECG</a></li>
+             <li><a href="#" class="portal-link" data-target="diag-monitor">Patient Monitor System</a></li>
+             <li><a href="#" class="portal-link" data-target="diag-endoscope">Endoscope</a></li>
+           </ul>
+        </div>
+      </aside>
+
+      <!-- MAIN CONTENT -->
+      <main class="portal-content">
+         
+         <!-- ULTRASOUND: HANDHELD -->
+         <div id="us-handheld" class="portal-pane" style="display: none;">
+             <div class="section-header" style="text-align: left; margin-bottom: 40px;">
+               <span class="section-tag">Ultrasound</span>
+               <h2 style="font-size: 32px;">Handheld Probes</h2>
+               <p>Ultra-portable, pocket-sized ultrasound devices compatible with smartphones and tablets for point-of-care and veterinary imaging.</p>
+             </div>
+
+             <!-- Edan Nano C5 EXP -->
+             <div class="prod-detail-card" id="nano-c5">
+               <div class="prod-detail-img-wrap">
+                 <img src="nano-c5.jpg?v=1" alt="Edan Nano C5 EXP" class="prod-detail-img"/>
+                 <div class="prod-model-badge">Nano C5 EXP</div>
+               </div>
+               <div class="prod-detail-content">
+                 <div class="product-brand-tag">EDAN</div>
+                 <h3>Edan Nano C5 EXP <span class="prod-type-label">Wireless Handheld Probe</span></h3>
+                 <p class="prod-applications"><strong>Key Highlights:</strong> Pocket-sized wireless probe offering exceptional durability and continuous scanning via Android devices.</p>
+                 <ul class="prod-features">
+                   <li><strong>Compatibility:</strong> Suitable for both Human &amp; Veterinary diagnostics</li>
+                   <li>Frequency: 2 - 5 MHz</li>
+                   <li>Scan Modes: B, C, M, PW</li>
+                   <li>Weight: Approx. 240g</li>
+                   <li>Type-C Charging (Up to 5 hours continuous scanning)</li>
+                   <li>Android Phones and Tablet Support</li>
+                   <li>IP67 Durability (Water and Dust Resistant)</li>
+                 </ul>
+                 <a href="index.html#contact" class="btn btn-outline">Enquire Now</a>
+               </div>
+             </div>
+
+             <!-- Edan Nano L12 EXP -->
+             <div class="prod-detail-card reverse" id="nano-l12">
+               <div class="prod-detail-img-wrap">
+                 <img src="nano-l12.jpg?v=1" alt="Edan Nano L12 EXP" class="prod-detail-img"/>
+                 <div class="prod-model-badge">Nano L12 EXP</div>
+               </div>
+               <div class="prod-detail-content">
+                 <div class="product-brand-tag">EDAN</div>
+                 <h3>Edan Nano L12 EXP <span class="prod-type-label">Linear Handheld Probe</span></h3>
+                 <p class="prod-applications"><strong>Key Highlights:</strong> High-frequency linear probe supporting both wired and wireless connection for precise superficial imaging.</p>
+                 <ul class="prod-features">
+                   <li><strong>Compatibility:</strong> Suitable for both Human &amp; Veterinary diagnostics</li>
+                   <li>Frequency: 4.0 - 13.0 MHz</li>
+                   <li>Scanning Depth: 0.5cm - 10cm</li>
+                   <li>Scan Modes: B, C, M, PW, Power Doppler</li>
+                   <li>Weight: Approx. 216g</li>
+                   <li>Wired and Wireless connection to Android devices</li>
+                   <li>Type-C Charging (Up to 5 hours continuous scanning)</li>
+                 </ul>
+                 <a href="index.html#contact" class="btn btn-outline">Enquire Now</a>
+               </div>
+             </div>
+
+             <!-- Wired Endorectal Probe -->
+             <div class="prod-detail-card" id="wired-endorectal">
+               <div class="prod-detail-img-wrap">
+                 <img src="wired-endorectal.jpg?v=1" alt="Wired Endorectal Probe" class="prod-detail-img"/>
+                 <div class="prod-model-badge">Endorectal</div>
+               </div>
+               <div class="prod-detail-content">
+                 <div class="product-brand-tag">SONORAY</div>
+                 <h3>Wired Endorectal <span class="prod-type-label">Portable Vet Probe</span></h3>
+                 <p class="prod-applications"><strong>Key Highlights:</strong> Specialised large animal pregnancy scanner compatible directly with Android smartphones and tablets.</p>
+                 <ul class="prod-features">
+                   <li><strong>Compatibility:</strong> Specialised for Veterinary diagnostics</li>
+                   <li>Frequency: 5.5 - 7.5 MHz</li>
+                   <li>Scan Depth: 3.0 to 12.0 cm</li>
+                   <li>Scan Modes: B, M, 2B</li>
+                   <li>Android Smartphones and Tablets Compatible</li>
+                   <li>Portable Handheld Endo Rectal Probe design</li>
+                 </ul>
+                 <a href="index.html#contact" class="btn btn-outline">Enquire Now</a>
+               </div>
+             </div>
+
+             <!-- Farm Scanner -->
+             <div class="prod-detail-card reverse" id="farm-scanner">
+               <div class="prod-detail-img-wrap">
+                 <img src="farm-scanner.jpg?v=1" alt="Farm Scanner" class="prod-detail-img"/>
+                 <div class="prod-model-badge featured-model">Farm Scanner</div>
+               </div>
+               <div class="prod-detail-content">
+                 <div class="product-brand-tag">SONORAY</div>
+                 <h3>Farm Scanner <span class="prod-type-label">Portable Veterinary Unit</span></h3>
+                 <p class="prod-applications"><strong>Key Highlights:</strong> Rugged, standalone portable scanner with built-in color display designed for field veterinary work.</p>
+                 <ul class="prod-features">
+                   <li><strong>Compatibility:</strong> Specialised for Veterinary diagnostics</li>
+                   <li>Frequency: 2.0 - 10.0 MHz</li>
+                   <li>5.8 inch Color Transflective TFT Display</li>
+                   <li>Weight: 0.6 kg (including battery)</li>
+                   <li>Dimensions: 250mm x 120mm x 40mm</li>
+                   <li>420 frame cine loop memory</li>
+                 </ul>
+                 <a href="index.html#contact" class="btn btn-primary">Enquire Now</a>
+               </div>
+             </div>
+
+             <!-- Interchangeable Probes System -->
+             <div class="prod-detail-card" id="interchangeable-probes">
+               <div class="prod-detail-img-wrap">
+                 <img src="interchangeable-probes.jpg?v=1" alt="Interchangeable Probes Ultrasound" class="prod-detail-img"/>
+                 <div class="prod-model-badge">Multi-Probe System</div>
+               </div>
+               <div class="prod-detail-content">
+                 <div class="product-brand-tag">SONORAY</div>
+                 <h3>Interchangeable Probes <span class="prod-type-label">Versatile Pocket Ultrasound</span></h3>
+                 <p class="prod-applications"><strong>Key Highlights:</strong> A single pocket-sized base unit that supports 10 different interchangeable 128-element probes for ultimate versatility.</p>
+                 <ul class="prod-features">
+                   <li><strong>Compatibility:</strong> Suitable for both Human &amp; Veterinary diagnostics</li>
+                   <li>Pocket Sized Ultrasound with 10 interchangeable probes</li>
+                   <li>128 Elements Probes</li>
+                   <li>Imaging modes: B, B+B, B/M, C, PW, PDI, B+C+PW</li>
+                   <li>Android, iOS, Windows Supported</li>
+                   <li>Supports Wireless and USB Type-C Wired Charging</li>
+                   <li>Dual-screen analysis, image/video saving, annotations, &amp; report printing</li>
+                 </ul>
+                 <a href="index.html#contact" class="btn btn-outline">Enquire Now</a>
+               </div>
+             </div>
+
+             <!-- C10 RS Microconvex Wireless Probe -->
+             <div class="prod-detail-card reverse" id="c10rs-probe">
+               <div class="prod-detail-img-wrap">
+                 <img src="c10rs-probe.jpg?v=1" alt="C10 RS Microconvex Wireless Probe" class="prod-detail-img"/>
+                 <div class="prod-model-badge">C10 RS Microconvex</div>
+               </div>
+               <div class="prod-detail-content">
+                 <div class="product-brand-tag">SONORAY</div>
+                 <h3>C10 RS Microconvex <span class="prod-type-label">Wireless Probe</span></h3>
+                 <p class="prod-applications"><strong>Key Highlights:</strong> High-performance wireless microconvex probe with a massive 4200 mAh battery for extended use.</p>
+                 <ul class="prod-features">
+                   <li><strong>Compatibility:</strong> Suitable for both Human &amp; Veterinary diagnostics</li>
+                   <li>Frequency: 5 - 7 MHz</li>
+                   <li>Scanning Depth: 60mm to 160 mm</li>
+                   <li>Imaging Modes: B, B+M, C, PW, Power Doppler</li>
+                   <li>Supporting Devices: Android, iOS, Windows</li>
+                   <li>Massive Battery: 4200 mAh</li>
+                   <li>Weight: 221g</li>
+                 </ul>
+                 <a href="index.html#contact" class="btn btn-outline">Enquire Now</a>
+               </div>
+             </div>
+
+         </div>
+
+         <!-- ULTRASOUND: PORTABLE -->
+         <div id="us-portable" class="portal-pane" style="display: block;">
+             <div class="section-header" style="text-align: left; margin-bottom: 40px;">
+               <span class="section-tag">Ultrasound</span>
+               <h2 style="font-size: 32px;">Portable Systems</h2>
+               <p>Lightweight, versatile diagnostic systems designed for point-of-care and mobile applications.</p>
+             </div>
+             
+             <!-- DS-30 Plus -->
+             <div class="prod-detail-card" id="ds30plus">
+               <div class="prod-detail-img-wrap">
+                 <img src="ds30plus.png?v=1" alt="DS-30 Plus Ultrasound Machine" class="prod-detail-img"/>
+                 <div class="prod-model-badge">DS-30 Plus</div>
+               </div>
+               <div class="prod-detail-content">
+                 <div class="product-brand-tag">SONORAY</div>
+                 <h3>DS-30 Plus <span class="prod-type-label">Digital Ultrasonic Diagnostic Imaging System</span></h3>
+                 <p class="prod-applications"><strong>Applications:</strong> Abdominal &middot; Urology &middot; GYN &middot; OB &middot; Pediatric &middot; Small Parts &middot; Cardiology &middot; Peripheral Vessels</p>
+                 <ul class="prod-features">
+                   <li><strong>Compatibility:</strong> Suitable for both Human & Veterinary diagnostics</li>
+                   <li>12.1" TFT LCD Monitor</li>
+                   <li>Dual Transducer Connector</li>
+                   <li>THI &ndash; Tissue Harmonic Imaging</li>
+                   <li>8 Segment TGC</li>
+                   <li>Weighs Only 6 Kgs</li>
+                   <li>Pulse Wave Doppler</li>
+                   <li>Imaging Modes: B, B+B, B+M, M, 4B</li>
+                   <li>Up to 4GB Expandable Memory</li>
+                   <li>256 Frames Cine Loop</li>
+                 </ul>
+                 <a href="index.html#contact" class="btn btn-outline">Enquire Now</a>
+               </div>
+             </div>
+
+             <!-- DS-50 -->
+             <div class="prod-detail-card reverse" id="ds50">
+               <div class="prod-detail-img-wrap">
+                 <img src="ds50.png?v=1" alt="DS-50 Digital Color Doppler" class="prod-detail-img"/>
+                 <div class="prod-model-badge">DS-50</div>
+               </div>
+               <div class="prod-detail-content">
+                 <div class="product-brand-tag">SONORAY</div>
+                 <h3>DS-50 <span class="prod-type-label">Digital Color Doppler System</span></h3>
+                 <p class="prod-applications"><strong>Imaging Modes:</strong> B &middot; B+B &middot; CPA &middot; DPD &middot; 4B &middot; B/M &middot; M &middot; THI &middot; PW</p>
+                 <ul class="prod-features">
+                   <li><strong>Compatibility:</strong> Suitable for both Human & Veterinary diagnostics</li>
+                   <li>12.1" LED Monitor with Tilt Facility (30&deg;)</li>
+                   <li>2 Transducer Connectors</li>
+                   <li>Colour Power Angio</li>
+                   <li>Linux Based System</li>
+                   <li>Speckle Reduction Algorithm (SRA)</li>
+                   <li>Compound Imaging &amp; Trapezoid Imaging</li>
+                   <li>i-Imaging (Intelligent Image Optimization)</li>
+                   <li>Automatic PW Trace</li>
+                   <li>Multi Frequency Transducers</li>
+                   <li>2000+ Image Storage</li>
+                   <li>256 Frames CINE Loop &middot; 1 USB Port</li>
+                 </ul>
+                 <a href="index.html#contact" class="btn btn-outline">Enquire Now</a>
+               </div>
+             </div>
+
+             <!-- DS-50 Plus -->
+             <div class="prod-detail-card" id="ds50plus">
+               <div class="prod-detail-img-wrap">
+                 <img src="ds50plus.png?v=1" alt="DS-50 Plus Digital Color Doppler" class="prod-detail-img"/>
+                 <div class="prod-model-badge featured-model">DS-50 Plus</div>
+               </div>
+               <div class="prod-detail-content">
+                 <div class="product-brand-tag">SONORAY</div>
+                 <h3>DS-50 Plus <span class="prod-type-label">Digital Color Doppler System</span></h3>
+                 <p class="prod-applications"><strong>Imaging Modes:</strong> B &middot; B+B &middot; 4B &middot; M &middot; Color &middot; PWD &middot; HPRF &middot; Power Doppler &middot; DUAL LIVE (B &amp; Color/PDI) &middot; Duplex / Triplex Imaging</p>
+                 <ul class="prod-features">
+                   <li><strong>Compatibility:</strong> Suitable for both Human & Veterinary diagnostics</li>
+                   <li>12.1" LCD Monitor</li>
+                   <li>2 Transducer Connectors</li>
+                   <li>Speckle Reduction Algorithm (SRA)</li>
+                   <li>THI &middot; TSI &middot; Digital Beam Forming</li>
+                   <li>Spatial Compound Imaging</li>
+                   <li>Phase Inversion Harmonic Imaging</li>
+                   <li>Multi Frequency Transducers</li>
+                   <li>Software: OB &middot; GYN &middot; Cardiac &middot; Small Parts &middot; URO &middot; Peripheral &middot; Carotid &middot; Thyroid &middot; MSK &middot; Vascular</li>
+                   <li>500GB Inbuilt Hard Disk</li>
+                 </ul>
+                 <div class="prod-highlight">&#10022; Ideal for multi-specialty clinics &amp; radiology centres</div>
+                 <a href="index.html#contact" class="btn btn-primary">Enquire Now</a>
+               </div>
+             </div>
+
+             <!-- DS-100 Plus -->
+             <div class="prod-detail-card reverse" id="ds100plus">
+               <div class="prod-detail-img-wrap">
+                 <img src="ds100plus.png?v=1" alt="DS-100 Plus Portable Color Doppler" class="prod-detail-img"/>
+                 <div class="prod-model-badge">DS-100 Plus</div>
+               </div>
+               <div class="prod-detail-content">
+                 <div class="product-brand-tag">SONORAY</div>
+                 <h3>DS-100 Plus <span class="prod-type-label">Digital Portable Color Doppler</span></h3>
+                 <p class="prod-applications"><strong>Key Highlights:</strong> Lightweight portable system with internal battery &mdash; designed for ward rounds &amp; mobile use</p>
+                 <ul class="prod-features">
+                   <li><strong>Compatibility:</strong> Suitable for both Human & Veterinary diagnostics</li>
+                   <li>15.6" Monitor &amp; 10.1" Touch Pad</li>
+                   <li>Weight Less Than 4.5 Kgs</li>
+                   <li>In-built Battery &mdash; 2 Hours Continuous Use</li>
+                   <li>Color Doppler Flow Imaging</li>
+                   <li>Pulse Wave / Continuous Wave Doppler</li>
+                   <li>Power Doppler &amp; Adoptive Doppler Imaging</li>
+                   <li>Trapezoidal Imaging</li>
+                   <li>Tissue Harmonic Imaging</li>
+                   <li>Anatomical M-Mode for Cardiac Imaging</li>
+                   <li>Internal Image Storage 500GB</li>
+                   <li>Android Operated System</li>
+                 </ul>
+                 <a href="index.html#contact" class="btn btn-outline">Enquire Now</a>
+               </div>
+             </div>
+
+             <!-- SonoScape E2V -->
+             <div class="prod-detail-card" id="sonoscape-e2v">
+               <div class="prod-detail-img-wrap">
+                 <img src="ss-e2v.png?v=1" alt="SonoScape E2V" class="prod-detail-img ss-machine-img"/>
+                 <div class="prod-model-badge">E2V</div>
+               </div>
+               <div class="prod-detail-content">
+                 <div class="product-brand-tag ss-brand-tag">SONOSCAPE</div>
+                 <h3>SonoScape E2V <span class="prod-type-label">Portable Color Doppler System</span></h3>
+                 <p class="prod-applications"><strong>Applications:</strong> Abdominal &middot; Gynecology &middot; Obstetrics &middot; Cardiology &middot; MSK &middot; Small Parts &middot; Ophthalmology &middot; Anesthesiology</p>
+                 <ul class="prod-features">
+                   <li>15.6" HD LCD Monitor with Full-Screen Mode</li>
+                   <li>Lightweight &amp; Compact &mdash; approx. 6 Kgs</li>
+                   <li>2 Active Probe Ports (expandable to 3)</li>
+                   <li>90 Min Battery Life (up to 3 hrs with extender)</li>
+                   <li>Dynamic Multi-Beam Imaging (&mu;-Scan)</li>
+                   <li>Spatial Compound Imaging &amp; THI</li>
+                   <li>Color Doppler &middot; Power Doppler &middot; PW &middot; CW Doppler</li>
+                   <li>Real-Time Panoramic Imaging &amp; Vis-Needle</li>
+                   <li>DICOM 3.0 Compliant &middot; 2&times; USB Ports</li>
+                   <li>One-Click Auto-Optimization</li>
+                 </ul>
+                 <a href="index.html#contact" class="btn btn-sonoscape">Enquire Now</a>
+               </div>
+             </div>
+
+         </div>
+
+         <!-- ULTRASOUND: TROLLEY -->
+         <div id="us-trolley" class="portal-pane" style="display: none;">
+             <div class="section-header" style="text-align: left; margin-bottom: 40px;">
+               <span class="section-tag">Ultrasound</span>
+               <h2 style="font-size: 32px;">Trolley Systems</h2>
+               <p>Advanced diagnostic workstations built for high-volume imaging centers and multi-specialty hospitals.</p>
+             </div>
+             
+             <!-- DS-150 Plus -->
+             <div class="prod-detail-card" id="ds150plus">
+               <div class="prod-detail-img-wrap">
+                 <img src="ds150plus.png?v=1" alt="DS-150 Plus Digital Color Doppler" class="prod-detail-img"/>
+                 <div class="prod-model-badge featured-model">DS-150 Plus</div>
+               </div>
+               <div class="prod-detail-content">
+                 <div class="product-brand-tag">SONORAY</div>
+                 <h3>DS-150 Plus <span class="prod-type-label">Digital Color Doppler</span></h3>
+                 <p class="prod-applications"><strong>Imaging Modes:</strong> B &middot; B/B &middot; B/M &middot; 4B &middot; Color Doppler Flow Imaging &middot; Pulse Wave Doppler &middot; Power Doppler</p>
+                 <ul class="prod-features">
+                   <li><strong>Compatibility:</strong> Suitable for both Human & Veterinary diagnostics</li>
+                   <li>19" LCD Monitor</li>
+                   <li>4 Ports Connector</li>
+                   <li>Speckle Resistance</li>
+                   <li>Multi-Beam Forming &amp; Beam Forming Optimization</li>
+                   <li>Spatial Compound Imaging</li>
+                   <li>Large Capacity Integrated Hard Disk</li>
+                   <li>Multi Frequency Transducers</li>
+                   <li>Software: ABD &middot; OB &middot; GYN &middot; Cardiac &middot; Small Parts &middot; URO &middot; Vascular</li>
+                   <li>180&deg; Rotatable Display</li>
+                 </ul>
+                 <div class="prod-highlight">&#10022; Premium trolley system for high-volume radiology departments</div>
+                 <a href="index.html#contact" class="btn btn-primary">Enquire Now</a>
+               </div>
+             </div>
+
+             <!-- DS-200 Plus -->
+             <div class="prod-detail-card reverse" id="ds200plus">
+               <div class="prod-detail-img-wrap">
+                 <img src="ds200plus.png?v=2" alt="DS-200 Plus Trolley Color Doppler" class="prod-detail-img"/>
+                 <div class="prod-model-badge featured-model">DS-200 Plus</div>
+               </div>
+               <div class="prod-detail-content">
+                 <div class="product-brand-tag">SONORAY</div>
+                 <h3>DS-200 Plus <span class="prod-type-label">Digital Trolley Color Doppler</span></h3>
+                 <p class="prod-applications"><strong>Key Highlights:</strong> Flagship trolley system with the most comprehensive imaging modes and software packages</p>
+                 <ul class="prod-features">
+                   <li><strong>Compatibility:</strong> Suitable for both Human & Veterinary diagnostics</li>
+                   <li>21.5" Monitor &amp; 14" Touch Pad</li>
+                   <li>Standard 3 Ports Connectivity Simultaneously</li>
+                   <li>In-built Battery &mdash; 2 Hours Continuous Use</li>
+                   <li>Color Doppler Flow Imaging</li>
+                   <li>Pulse Wave / Continuous Wave Doppler</li>
+                   <li>Tissue Harmonic Imaging</li>
+                   <li>Elastography Imaging</li>
+                   <li>Auto IMT &middot; Anatomic M-Mode</li>
+                   <li>TAI &ndash; Tissue Adopting Imaging</li>
+                   <li>TDI &ndash; Tissue Doppler Imaging</li>
+                   <li>Trapezoidal Imaging</li>
+                   <li>eLearn Instruction Software</li>
+                   <li>Internal Image Storage 500GB</li>
+                   <li>Output: S-Video &middot; 2&times; USB &middot; HDMI &middot; Ethernet</li>
+                 </ul>
+                 <div class="prod-highlight">&#10022; Top-of-the-line flagship &mdash; ideal for tertiary care &amp; advanced imaging centres</div>
+                 <a href="index.html#contact" class="btn btn-primary">Enquire Now</a>
+               </div>
+             </div>
+             
+             <!-- SonoScape S12 -->
+             <div class="prod-detail-card" id="sonoscape-s12">
+               <div class="prod-detail-img-wrap">
+                 <img src="ss-s12.png?v=1" alt="SonoScape S12" class="prod-detail-img ss-machine-img"/>
+                 <div class="prod-model-badge">S12</div>
+               </div>
+               <div class="prod-detail-content">
+                 <div class="product-brand-tag ss-brand-tag">SONOSCAPE</div>
+                 <h3>SonoScape S12 <span class="prod-type-label">Color Doppler Trolley System</span></h3>
+                 <p class="prod-applications"><strong>Imaging Modes:</strong> B &middot; M &middot; Color Doppler &middot; DPI &middot; PW Doppler &middot; Anatomical M &middot; Color M &middot; Duplex &middot; 3D/4D</p>
+                 <ul class="prod-features">
+                   <li>15" HD LED Articulating Monitor</li>
+                   <li>4 Active Transducer Ports</li>
+                   <li>3D/4D Imaging &mdash; ideal for OB/GYN</li>
+                   <li>Pulse Inversion Harmonic Imaging</li>
+                   <li>&mu;-Scan Speckle Reduction Technology</li>
+                   <li>Spatial Compound Imaging (SCI)</li>
+                   <li>Real-Time Panoramic Imaging</li>
+                   <li>Auto-IMT (Intima-Media Thickness)</li>
+                   <li>DICOM 3.0 &middot; USB &middot; DVD &middot; PDF Export</li>
+                   <li>Software: ABD &middot; OB &middot; GYN &middot; Cardiac &middot; URO &middot; MSK &middot; Vascular &middot; Pediatric</li>
+                 </ul>
+                 <div class="prod-highlight">&#10022; Ideal for multi-specialty hospitals &amp; radiology departments</div>
+                 <a href="index.html#contact" class="btn btn-sonoscape">Enquire Now</a>
+               </div>
+             </div>
+             
+             <!-- SonoScape Propet 60 -->
+             <div class="prod-detail-card reverse" id="sonoscape-propet60">
+               <div class="prod-detail-img-wrap">
+                 <img src="ss-propet60.png?v=1" alt="SonoScape Propet 60" class="prod-detail-img ss-machine-img"/>
+                 <div class="prod-model-badge featured-model">Propet 60</div>
+               </div>
+               <div class="prod-detail-content">
+                 <div class="product-brand-tag ss-brand-tag">SONOSCAPE</div>
+                 <h3>SonoScape Propet 60 <span class="prod-type-label">AI-Powered Premium Trolley System</span></h3>
+                 <p class="prod-applications"><strong>Key Highlights:</strong> Flagship system with the Wis+ AI platform &mdash; deep learning for automated tissue analysis and superior diagnostic precision</p>
+                 <ul class="prod-features">
+                   <li>21.5" HD LED Monitor</li>
+                   <li>13.3" Tilt Touch Panel</li>
+                   <li>5 Active Probe Ports + 1 Pedoff Port</li>
+                   <li>Wis+ AI Platform &mdash; Deep Learning Analysis</li>
+                   <li>Micro F Technology &mdash; Micro-Vessel Visualization</li>
+                   <li>Advanced 3D/4D Rendering (S-Live &amp; Silhouette)</li>
+                   <li>Myocardium Quantitative Analysis (MQA)</li>
+                   <li>Stress Echo &amp; Tissue Doppler Imaging</li>
+                   <li>In-built Battery &middot; Wi-Fi &middot; Gel Warmer</li>
+                   <li>Software: ABD &middot; Cardiac &middot; GYN/OB &middot; MSK &middot; URO &middot; Vascular &middot; Anaesthesia &middot; Pelvic Floor</li>
+                 </ul>
+                 <div class="prod-highlight">&#10022; Our most advanced AI-assisted system for precision diagnostics</div>
+                 <a href="index.html#contact" class="btn btn-sonoscape">Enquire Now</a>
+               </div>
+             </div>
+
+         </div>
+
+         <!-- X-RAYS: PORTABLE -->
+         <div id="xr-portable" class="portal-pane" style="display: none;">
+             <div class="section-header" style="text-align: left; margin-bottom: 40px;">
+               <span class="section-tag">X-Rays</span>
+               <h2 style="font-size: 32px;">Portable X-Rays</h2>
+               <p>High-frequency portable X-Ray solutions for bedside and field diagnostics.</p>
+             </div>
+
+             <!-- Alerio Smart 1600 -->
+             <div class="prod-detail-card" id="alerio-1600">
+               <div class="prod-detail-img-wrap">
+                 <img src="alerio1600.jpg?v=1" alt="Alerio Smart 1600 Portable X-Ray" class="prod-detail-img ss-machine-img"/>
+                 <div class="prod-model-badge">Smart 1600</div>
+               </div>
+               <div class="prod-detail-content">
+                 <div class="product-brand-tag">ALERIO</div>
+                 <h3>Alerio Smart 1600 <span class="prod-type-label">Battery Powered Portable X-Ray</span></h3>
+                 <p class="prod-applications"><strong>Key Highlights:</strong> Ultra-lightweight, cordless X-ray unit designed for emergencies, field hospitals, and point-of-care.</p>
+                 <ul class="prod-features">
+                   <li><strong>Compatibility:</strong> Suitable for both Human & Veterinary diagnostics</li>
+                   <li>Peak Power: 1.6 kW</li>
+                   <li>kV Range: 40 kV – 90 kV</li>
+                   <li>Weight: &lt; 10 kg</li>
+                   <li>Focal Spot: 0.8 mm (Stationary Anode)</li>
+                   <li>Rechargeable Li-ion Battery (100+ exposures/charge)</li>
+                   <li>Wireless exposure switch included</li>
+                 </ul>
+                 <div class="prod-highlight">&#10022; True cordless mobility for any medical camp or ICU</div>
+                 <a href="index.html#contact" class="btn btn-outline">Enquire Now</a>
+               </div>
+             </div>
+
+             <!-- Alerio Smart 2800 -->
+             <div class="prod-detail-card reverse" id="alerio-2800">
+               <div class="prod-detail-img-wrap">
+                 <img src="alerio2800.jpg?v=1" alt="Alerio Smart 2800 Portable X-Ray" class="prod-detail-img ss-machine-img"/>
+                 <div class="prod-model-badge featured-model">Smart 2800</div>
+               </div>
+               <div class="prod-detail-content">
+                 <div class="product-brand-tag">ALERIO</div>
+                 <h3>Alerio Smart 2800 <span class="prod-type-label">High-Frequency Portable X-Ray</span></h3>
+                 <p class="prod-applications"><strong>Key Highlights:</strong> A versatile, high-power system perfect for small clinics and mobile diagnostic vehicles.</p>
+                 <ul class="prod-features">
+                   <li><strong>Compatibility:</strong> Suitable for both Human & Veterinary diagnostics</li>
+                   <li>Peak Power: 2.8 kW (Up to 70 mA)</li>
+                   <li>Tube Voltage: 40 kV – 100 kV</li>
+                   <li>Weight: &lt; 12 kg</li>
+                   <li>Focal Spot: 1.2 mm</li>
+                   <li>Advanced High-Frequency Inverter (100+ kHz)</li>
+                   <li>Digital Control Panel with pre-programmed settings</li>
+                 </ul>
+                 <div class="prod-highlight">&#10022; Combines mobile versatility with powerful hospital-grade imaging</div>
+                 <a href="index.html#contact" class="btn btn-primary">Enquire Now</a>
+               </div>
+             </div>
+
+         </div>
+
+         <!-- X-RAYS: MOBILE -->
+         <div id="xr-mobile" class="portal-pane" style="display: none;">
+             <div class="section-header" style="text-align: left; margin-bottom: 40px;">
+               <span class="section-tag">X-Rays</span>
+               <h2 style="font-size: 32px;">Mobile X-Rays</h2>
+               <p>Manoeuvrable, high-capacity mobile X-Ray units for hospital wards and ICUs.</p>
+             </div>
+
+             <!-- Alerio Smart 4200 -->
+             <div class="prod-detail-card" id="alerio-4200">
+               <div class="prod-detail-img-wrap">
+                 <img src="alerio4200.jpg?v=1" alt="Alerio Smart 4200 Mobile X-Ray" class="prod-detail-img"/>
+                 <div class="prod-model-badge">Smart 4200</div>
+               </div>
+               <div class="prod-detail-content">
+                 <div class="product-brand-tag">ALERIO</div>
+                 <h3>Alerio Smart 4200 <span class="prod-type-label">High-Frequency Mobile X-Ray</span></h3>
+                 <p class="prod-applications"><strong>Key Highlights:</strong> Advanced dual-focus mobile unit offering high-quality imaging at lower exposure settings for ERs and bedsides.</p>
+                 <ul class="prod-features">
+                   <li><strong>Compatibility:</strong> Suitable for both Human &amp; Veterinary diagnostics</li>
+                   <li>Output Power: 4.2 kW (at 100 kV)</li>
+                   <li>Output kV Range: 40 kV &ndash; 120 kV</li>
+                   <li>mAs Range: 0.1 &ndash; 250 mAs (up to 100 mA)</li>
+                   <li>Dual Focal Spot: 0.6 mm (Small) / 1.8 mm (Large)</li>
+                   <li>Digital command and control with APR settings</li>
+                   <li>Built-in voltage stabilizer</li>
+                 </ul>
+                 <a href="index.html#contact" class="btn btn-outline">Enquire Now</a>
+               </div>
+             </div>
+
+             <!-- Alerio Smart 5000 -->
+             <div class="prod-detail-card reverse" id="alerio-5000">
+               <div class="prod-detail-img-wrap">
+                 <img src="alerio5000.jpg?v=1" alt="Alerio Smart 5000 Mobile X-Ray" class="prod-detail-img"/>
+                 <div class="prod-model-badge featured-model">Smart 5000</div>
+               </div>
+               <div class="prod-detail-content">
+                 <div class="product-brand-tag">ALERIO</div>
+                 <h3>Alerio Smart 5000 <span class="prod-type-label">High-Frequency Mobile X-Ray</span></h3>
+                 <p class="prod-applications"><strong>Key Highlights:</strong> Powerful 5kW HF DC generator technology for stable radiation and high-contrast images in hospital wards and ICUs.</p>
+                 <ul class="prod-features">
+                   <li><strong>Compatibility:</strong> Suitable for both Human &amp; Veterinary diagnostics</li>
+                   <li>Output Power: 5.0 kW</li>
+                   <li>Output kV Range: 40 kV &ndash; 100 kV</li>
+                   <li>mAs Range: 0.3 &ndash; 250 mAs (up to 120 mA)</li>
+                   <li>Focal Spot Size: 2.2 mm (Stationary Anode)</li>
+                   <li>Maneuverable footprint (Weight: &lt; 80 kg)</li>
+                   <li>Manual collimator with LED illumination</li>
+                 </ul>
+                 <a href="index.html#contact" class="btn btn-primary">Enquire Now</a>
+               </div>
+             </div>
+
+         </div>
+
+         <!-- X-RAYS: CR and DR -->
+         <div id="xr-crdr" class="portal-pane" style="display: none;">
+             <div class="section-header" style="text-align: left; margin-bottom: 40px;">
+               <span class="section-tag">X-Rays</span>
+               <h2 style="font-size: 32px;">CR and DR Systems</h2>
+               <p>Computed Radiography and Digital Radiography systems for instant, high-quality digital imaging.</p>
+             </div>
+
+             <!-- Edusoft ERAY Gold -->
+             <div class="prod-detail-card" id="eray-gold">
+               <div class="prod-detail-img-wrap">
+                 <img src="eray-gold.jpg?v=1" alt="Edusoft ERAY Gold Flat Panel Detector" class="prod-detail-img"/>
+                 <div class="prod-model-badge">ERAY Gold</div>
+               </div>
+               <div class="prod-detail-content">
+                 <div class="product-brand-tag">EDUSOFT</div>
+                 <h3>ERAY Gold <span class="prod-type-label">Wireless Flat Panel Detector</span></h3>
+                 <p class="prod-applications"><strong>Key Highlights:</strong> A premium, robust wireless DR detector delivering full high-resolution images in under 2 seconds for highly efficient workflows.</p>
+                 <ul class="prod-features">
+                   <li><strong>Compatibility:</strong> Suitable for both Human &amp; Veterinary diagnostics</li>
+                   <li>Scintillator: CsI (Cesium Iodide) for superior image quality</li>
+                   <li>Pixel Size: 140 &mu;m (16-bit Grayscale)</li>
+                   <li>Sizes Available: 14"x17" and 17"x17"</li>
+                   <li>Weight: 2.7 kg (with battery)</li>
+                   <li>Battery Life: &gt; 8 hours (Supports hot-swappable dual batteries)</li>
+                   <li>Durability: IPX6 Water-Resistant, 300kg load capacity</li>
+                 </ul>
+                 <a href="index.html#contact" class="btn btn-outline">Enquire Now</a>
+               </div>
+             </div>
+
+             <!-- Konica Minolta AeroX DR -->
+             <div class="prod-detail-card reverse" id="aerox-dr">
+               <div class="prod-detail-img-wrap">
+                 <img src="aerox-dr.jpg?v=1" alt="Konica Minolta AeroX DR System" class="prod-detail-img"/>
+                 <div class="prod-model-badge featured-model">AeroX DR</div>
+               </div>
+               <div class="prod-detail-content">
+                 <div class="product-brand-tag">KONICA MINOLTA</div>
+                 <h3>AeroX DR <span class="prod-type-label">Digital Radiography System</span></h3>
+                 <p class="prod-applications"><strong>Key Highlights:</strong> A lightweight, highly reliable wireless DR solution backed by Konica Minolta's imaging legacy, perfect for seamless PACS integration.</p>
+                 <ul class="prod-features">
+                   <li><strong>Compatibility:</strong> Suitable for both Human &amp; Veterinary diagnostics</li>
+                   <li>Scintillator: High-sensitivity CsI (Cesium Iodide)</li>
+                   <li>Resolution: 3072 x 3072 pixels (100 &mu;m pixel size)</li>
+                   <li>Lightweight Design: Approx. 2.6 kg (with battery)</li>
+                   <li>Image Acquisition: Less than 2 seconds</li>
+                   <li>Connectivity: High-speed Wi-Fi &amp; Gigabit Ethernet</li>
+                   <li>Durability: Carbon fiber construction, IPX6 rated</li>
+                 </ul>
+                 <a href="index.html#contact" class="btn btn-primary">Enquire Now</a>
+               </div>
+             </div>
+
+         </div>
+
+         <!-- DIAGNOSTICS -->
+         <div id="diag-vetbp" class="portal-pane" style="display: none;">
+             <div class="section-header" style="text-align: left; margin-bottom: 40px;">
+               <span class="section-tag">Diagnostic Products</span>
+               <h2 style="font-size: 32px;">Veterinary BP Doppler</h2>
+             </div>
+             <div class="empty-state"><p><em>Products to be listed soon.</em></p></div>
+         </div>
+
+         <div id="diag-vetecg" class="portal-pane" style="display: none;">
+             <div class="section-header" style="text-align: left; margin-bottom: 40px;">
+               <span class="section-tag">Diagnostic Products</span>
+               <h2 style="font-size: 32px;">Vet ECG</h2>
+             </div>
+             <div class="empty-state"><p><em>Products to be listed soon.</em></p></div>
+         </div>
+
+         <div id="diag-monitor" class="portal-pane" style="display: none;">
+             <div class="section-header" style="text-align: left; margin-bottom: 40px;">
+               <span class="section-tag">Diagnostic Products</span>
+               <h2 style="font-size: 32px;">Patient Monitor System</h2>
+             </div>
+             <div class="empty-state"><p><em>Products to be listed soon.</em></p></div>
+         </div>
+
+         <div id="diag-endoscope" class="portal-pane" style="display: none;">
+             <div class="section-header" style="text-align: left; margin-bottom: 40px;">
+               <span class="section-tag">Diagnostic Products</span>
+               <h2 style="font-size: 32px;">Endoscope</h2>
+             </div>
+             <div class="empty-state"><p><em>Products to be listed soon.</em></p></div>
+         </div>
+
+      </main>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <img src="sonoray-logo.jpg" alt="Sonoray Medical Systems" class="footer-logo-img"/>
+          <p style="margin-top:20px; font-size:14px; color:rgba(245,230,208,0.7); max-width: 250px;">
+            Trusted diagnostic imaging equipment and medical supply solutions for clinicians across India.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h3>Quick Links</h3>
+          <a href="index.html#solutions">Solutions</a>
+          <a href="products.html">Products Portal</a>
+          <a href="index.html#about">About Us</a>
+          <a href="index.html#contact">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h3>Categories</h3>
+          <a href="products.html">Ultrasound Systems</a>
+          <a href="products.html">Digital X-Rays</a>
+          <a href="products.html">Diagnostic Tools</a>
+          <a href="products.html">Veterinary Products</a>
+        </div>
+        <div class="footer-col">
+          <h3>Contact Us</h3>
+          <p>No 1, 102nd Street, 15th Sector,<br/>K.K Nagar, Nesapakkam,<br/>Chennai - 600078, Tamil Nadu, India</p>
+          <p style="margin-top: 10px;">Phone: +91 94440 23689</p>
+          <p>Email: sonoraymedical@gmail.com</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 Sonoray Medical systems. All rights reserved.</p>
+        <div class="footer-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Use</a>
+          <a href="#">Regulatory</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js?v=6"></script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <title>Theme Preview: Teal & White</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #004d55; --bg2: #f4fbfb; --accent: #006d77; --accent2: #00a896;
+      --text: #ffffff; --text-dark: #1a2e32; --text2: #cce8eb; --text2-dark: #4a7070;
+      --border: rgba(0,168,150,0.25); --card: rgba(255,255,255,0.1);
+    }
+    body { font-family: 'Inter', sans-serif; background: var(--bg2); color: var(--text-dark); }
+    .theme-banner { background: linear-gradient(90deg, #006d77, #00a896); color: #fff; text-align: center; padding: 10px; font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 15px; letter-spacing: 1px; }
+    .theme-banner span { font-weight: 400; margin-left: 12px; font-size: 13px; opacity: 0.85; }
+    nav { background: var(--accent); border-bottom: 1px solid rgba(0,168,150,0.3); padding: 0 48px; display: flex; align-items: center; justify-content: space-between; height: 70px; position: sticky; top: 0; z-index: 100; }
+    .nav-logo { font-family: 'Outfit', sans-serif; font-size: 22px; font-weight: 800; color: #fff; }
+    .nav-logo span { font-weight: 400; opacity: 0.85; }
+    .nav-links { display: flex; gap: 32px; list-style: none; }
+    .nav-links a { color: rgba(255,255,255,0.8); text-decoration: none; font-size: 14px; font-weight: 500; }
+    .nav-links a:hover { color: #fff; }
+    .btn-nav { background: #fff; color: var(--accent); border: none; padding: 10px 22px; border-radius: 50px; font-weight: 700; font-size: 14px; cursor: pointer; font-family: 'Outfit', sans-serif; }
+    .hero { min-height: 88vh; display: flex; align-items: center; padding: 80px 48px; background: linear-gradient(135deg, #004d55 0%, #006d77 50%, #008a7a 100%); position: relative; overflow: hidden; }
+    .hero::before { content: ''; position: absolute; width: 600px; height: 600px; border-radius: 50%; background: radial-gradient(circle, rgba(0,168,150,0.2), transparent 70%); top: -150px; right: -150px; }
+    .hero-text { max-width: 580px; }
+    .hero-tag { display: inline-block; background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3); color: #fff; font-size: 12px; font-weight: 700; letter-spacing: 2px; padding: 6px 16px; border-radius: 50px; margin-bottom: 24px; text-transform: uppercase; font-family: 'Outfit', sans-serif; }
+    h1 { font-family: 'Outfit', sans-serif; font-size: clamp(36px, 5vw, 58px); font-weight: 800; line-height: 1.1; color: #fff; margin-bottom: 20px; }
+    h1 span { color: #7de8da; }
+    .hero p { color: rgba(255,255,255,0.8); font-size: 17px; line-height: 1.7; margin-bottom: 36px; }
+    .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
+    .btn-primary { background: #fff; color: var(--accent); border: none; padding: 14px 32px; border-radius: 50px; font-weight: 800; font-size: 15px; cursor: pointer; font-family: 'Outfit', sans-serif; }
+    .btn-outline { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,0.6); padding: 14px 32px; border-radius: 50px; font-weight: 700; font-size: 15px; cursor: pointer; font-family: 'Outfit', sans-serif; }
+    .hero-stats { display: flex; gap: 40px; margin-top: 56px; }
+    .stat-num { font-family: 'Outfit', sans-serif; font-size: 36px; font-weight: 800; color: #7de8da; }
+    .stat-label { font-size: 12px; color: rgba(255,255,255,0.7); margin-top: 2px; }
+    .strip { padding: 60px 48px; background: var(--bg2); border-top: 3px solid rgba(0,109,119,0.1); }
+    .strip-h2 { font-family: 'Outfit', sans-serif; font-size: 28px; font-weight: 800; color: var(--text-dark); margin-bottom: 32px; }
+    .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .card { background: #fff; border: 1px solid rgba(0,109,119,0.15); border-radius: 16px; padding: 24px; box-shadow: 0 4px 20px rgba(0,109,119,0.07); }
+    .card-tag { background: var(--accent); color: #fff; font-size: 11px; font-weight: 800; padding: 4px 12px; border-radius: 50px; display: inline-block; margin-bottom: 12px; font-family: 'Outfit', sans-serif; }
+    .card h3 { font-family: 'Outfit', sans-serif; font-size: 20px; font-weight: 800; color: var(--text-dark); margin-bottom: 8px; }
+    .card p { font-size: 13px; color: var(--text2-dark); line-height: 1.5; }
+    .card-img { width: 100%; height: 160px; background: linear-gradient(135deg, rgba(0,109,119,0.08), rgba(0,168,150,0.04)); border-radius: 10px; margin-bottom: 16px; display: flex; align-items: center; justify-content: center; font-size: 40px; }
+    .section-tag { display: inline-block; background: rgba(0,109,119,0.1); border: 1px solid rgba(0,109,119,0.2); color: var(--accent); font-size: 11px; font-weight: 700; letter-spacing: 2px; padding: 5px 14px; border-radius: 50px; margin-bottom: 12px; text-transform: uppercase; font-family: 'Outfit', sans-serif; }
+    .contact-strip { padding: 60px 48px; background: linear-gradient(135deg, #006d77, #004d55); display: flex; align-items: center; justify-content: space-between; }
+    .contact-strip h2 { font-family: 'Outfit', sans-serif; font-size: 32px; font-weight: 800; color: #fff; }
+    .contact-strip p { color: rgba(255,255,255,0.75); margin-top: 8px; }
+    .contact-strip .section-tag { background: rgba(255,255,255,0.15); border-color: rgba(255,255,255,0.3); color: #fff; }
+    .contact-strip .btn-primary { background: #fff; color: var(--accent); }
+  </style>
+</head>
+<body>
+  <div class="theme-banner">🩵 THEME PREVIEW: TEAL &amp; WHITE <span>— Modern &amp; Clinical</span></div>
+  <nav>
+    <div class="nav-logo">Sonoray <span>Medical Systems</span></div>
+    <ul class="nav-links">
+      <li><a href="#">Solutions</a></li><li><a href="#">Sonoray</a></li><li><a href="#">SonoScape</a></li><li><a href="#">About</a></li><li><a href="#">Contact</a></li>
+    </ul>
+    <button class="btn-nav">Get a Demo</button>
+  </nav>
+  <section class="hero">
+    <div class="hero-text">
+      <div class="hero-tag">&#9733; Trusted Ultrasound Partner Since 2004</div>
+      <h1>Diagnostic Imaging <span>Trusted by</span> Clinicians Across India</h1>
+      <p>Sonoray Medical Systems delivers advanced ultrasound solutions — from portable Doppler systems to premium cart-based machines — backed by 20+ years of expertise in Chennai.</p>
+      <div class="hero-btns">
+        <button class="btn-primary">Explore Products</button>
+        <button class="btn-outline">Get a Demo</button>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><div class="stat-num">20+</div><div class="stat-label">Years in Business</div></div>
+        <div class="stat"><div class="stat-num">6</div><div class="stat-label">DS Series Models</div></div>
+        <div class="stat"><div class="stat-num">3</div><div class="stat-label">SonoScape Systems</div></div>
+      </div>
+    </div>
+  </section>
+  <section class="strip">
+    <div class="section-tag">Our Products</div>
+    <div class="strip-h2">Sonoray DS Series Highlights</div>
+    <div class="cards">
+      <div class="card"><div class="card-img">🔬</div><div class="card-tag">SONORAY</div><h3>DS 30 Plus</h3><p>Portable B&amp;W ultrasound — ideal for rural clinics and bedside diagnostics.</p></div>
+      <div class="card"><div class="card-img">📡</div><div class="card-tag">SONORAY</div><h3>DS 150 Plus</h3><p>Mid-range colour Doppler with spatial compound imaging and 180° display.</p></div>
+      <div class="card"><div class="card-img">🏆</div><div class="card-tag">SONORAY</div><h3>DS 200 Plus</h3><p>Flagship trolley system with elastography, TAI and 21.5" HD monitor.</p></div>
+    </div>
+  </section>
+  <section class="contact-strip">
+    <div><div class="section-tag">Get in Touch</div><h2>Ready to Transform Your Imaging?</h2><p>Contact us at ultraserve@hotmail.com &nbsp;|&nbsp; +91 99400 10520</p></div>
+    <button class="btn-primary">Request a Demo &rarr;</button>
+  </section>
+</body>
+</html>
