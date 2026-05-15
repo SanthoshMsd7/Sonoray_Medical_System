@@ -251,8 +251,11 @@ body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--tex
   box-shadow: 0 25px 70px rgba(139,26,53,0.15);
   background: #fff;
 }
-.testimonial-card.featured-testimonial { background: linear-gradient(135deg, rgba(204,0,0,0.04), rgba(204,0,0,0.02)); border-color: rgba(204,0,0,0.3); }
-.testimonial-card.featured-testimonial:hover { background: rgba(204,0,0,0.05); }
+.testimonial-card.featured-testimonial { background: #fff; border-color: var(--border2); }
+.testimonial-card.featured-testimonial:hover { 
+  background: linear-gradient(135deg, rgba(204,0,0,0.04), rgba(204,0,0,0.02)); 
+  border-color: rgba(139,26,53,0.4); 
+}
 .stars { color: #e8a000; font-size: 16px; margin-bottom: 16px; letter-spacing: 2px; transition: transform 0.3s ease; }
 .testimonial-card:hover .stars { transform: scale(1.15) translateX(5px); }
 .testimonial-card p { color: var(--text2); font-size: 14px; line-height: 1.7; margin-bottom: 20px; font-style: italic; }
