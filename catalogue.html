@@ -1,0 +1,1748 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sonoray Medical Systems - A5 Product Catalogue</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    /* ── CORE COLOR TOKENS ── */
+    :root {
+      --burgundy: #8B1A35;
+      --burgundy-dark: #2D0F1C;
+      --burgundy-light: #F9F2F4;
+      --gold: #C8987A;
+      --gold-light: #F5E6D0;
+      --text-dark: #1A0810;
+      --text-muted: #5A4C52;
+      --border: #E5D5DB;
+      --page-bg: #FFFFFF;
+      --shadow: rgba(45, 15, 28, 0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #F0EAEB;
+      color: var(--text-dark);
+      line-height: 1.4;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── TOOLBAR (SCREEN ONLY) ── */
+    .no-print-toolbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: linear-gradient(135deg, var(--burgundy-dark), var(--burgundy));
+      padding: 16px 24px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #fff;
+      backdrop-filter: blur(8px);
+    }
+
+    .toolbar-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .toolbar-logo {
+      height: 36px;
+      background: white;
+      padding: 4px 8px;
+      border-radius: 6px;
+      object-fit: contain;
+    }
+
+    .toolbar-title h1 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 18px;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+    }
+
+    .toolbar-title p {
+      font-size: 11px;
+      color: var(--gold-light);
+      opacity: 0.8;
+    }
+
+    .toolbar-actions {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 20px;
+      font-family: 'Outfit', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      border-radius: 30px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      border: none;
+    }
+
+    .btn-print {
+      background: var(--gold);
+      color: var(--burgundy-dark);
+    }
+
+    .btn-print:hover {
+      background: var(--gold-light);
+      transform: translateY(-2px);
+    }
+
+    .btn-back {
+      background: rgba(255, 255, 255, 0.1);
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .btn-back:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    .instructions-card {
+      background: rgba(255, 255, 255, 0.05);
+      border-left: 3px solid var(--gold);
+      padding: 8px 16px;
+      font-size: 11px;
+      max-width: 420px;
+      color: #E2D9DD;
+      line-height: 1.5;
+    }
+
+    /* ── BOOKLET SIMULATOR ── */
+    .catalogue-container {
+      max-width: 800px;
+      margin: 40px auto;
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      align-items: center;
+      padding: 0 20px;
+    }
+
+    /* ── A5 PAGE DESIGN ── */
+    .a5-page {
+      position: relative;
+      width: 148mm;
+      height: 210mm;
+      background: var(--page-bg);
+      box-shadow: 0 10px 40px var(--shadow), 0 2px 8px rgba(0,0,0,0.05);
+      border-radius: 4px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      padding: 16mm 12mm; /* Standard print safety margin */
+    }
+
+    /* Page-specific styling classes */
+    .a5-page.cover-front {
+      background: linear-gradient(135deg, var(--burgundy-dark) 0%, var(--burgundy) 100%);
+      color: #fff;
+      justify-content: space-between;
+      align-items: center;
+      text-align: center;
+      padding: 20mm 15mm;
+    }
+
+    .a5-page.section-divider {
+      background: linear-gradient(135deg, var(--burgundy-dark) 0%, #3e0c17 100%);
+      color: #fff;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20mm 15mm;
+    }
+
+    .a5-page.cover-back {
+      background: linear-gradient(135deg, var(--burgundy-dark) 0%, var(--burgundy) 100%);
+      color: #fff;
+      justify-content: space-between;
+      padding: 20mm 15mm;
+    }
+
+    /* ── COVER STYLES ── */
+    .cover-header {
+      width: 100%;
+    }
+    .cover-logo-container {
+      background: #fff;
+      padding: 10px 24px;
+      border-radius: 12px;
+      display: inline-block;
+      margin-bottom: 12mm;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+    .cover-logo {
+      height: 52px;
+      display: block;
+      margin: 0 auto;
+      object-fit: contain;
+    }
+    .cover-body {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 100%;
+    }
+    .cover-title-label {
+      font-family: 'Outfit', sans-serif;
+      color: var(--gold);
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      margin-bottom: 4mm;
+    }
+    .cover-main-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 32px;
+      font-weight: 900;
+      line-height: 1.15;
+      color: var(--gold-light);
+      margin-bottom: 4mm;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .cover-subtitle {
+      font-size: 12px;
+      color: #D3C2C8;
+      max-width: 260px;
+      margin: 0 auto;
+      font-weight: 300;
+      letter-spacing: 0.5px;
+    }
+    .cover-footer {
+      width: 100%;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding-top: 6mm;
+    }
+    .cover-footer-text {
+      font-family: 'Outfit', sans-serif;
+      font-size: 10px;
+      color: var(--gold);
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+    .cover-footer-sub {
+      font-size: 9px;
+      color: #a58c97;
+      margin-top: 2px;
+    }
+
+    /* ── SECTION SPLASH PAGE ── */
+    .section-splash-tag {
+      font-family: 'Outfit', sans-serif;
+      color: var(--gold);
+      font-size: 10px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      margin-bottom: 6mm;
+    }
+    .section-splash-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 34px;
+      font-weight: 900;
+      color: #fff;
+      line-height: 1.1;
+      text-transform: uppercase;
+    }
+    .section-splash-decor {
+      width: 40px;
+      height: 2px;
+      background: var(--gold);
+      margin: 8mm auto;
+    }
+    .section-splash-desc {
+      font-size: 11px;
+      color: #D3C2C8;
+      max-width: 220px;
+      margin: 0 auto;
+      line-height: 1.5;
+    }
+
+    /* ── RUNNING HEADER / FOOTER ── */
+    .page-header-running {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 3mm;
+      margin-bottom: 5mm;
+      font-family: 'Outfit', sans-serif;
+      font-size: 8px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--text-muted);
+    }
+    .page-header-running .running-category {
+      color: var(--burgundy);
+      font-weight: 700;
+    }
+
+    .page-footer-running {
+      position: absolute;
+      bottom: 10mm;
+      left: 12mm;
+      right: 12mm;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid var(--border);
+      padding-top: 3mm;
+      font-family: 'Outfit', sans-serif;
+      font-size: 8px;
+      color: var(--text-muted);
+    }
+    .page-footer-running .page-number {
+      font-weight: 700;
+      color: var(--burgundy);
+    }
+
+    /* ── CONTENT TYPES ── */
+    .page-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--burgundy-dark);
+      margin-bottom: 4mm;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .page-title::after {
+      content: '';
+      flex-grow: 1;
+      height: 1px;
+      background: linear-gradient(90deg, var(--gold), transparent);
+    }
+
+    /* 2 columns layout inside page */
+    .page-grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6mm;
+      flex-grow: 1;
+    }
+
+    /* Split page layout (horizontal or vertical partition) */
+    .split-container {
+      display: flex;
+      flex-direction: column;
+      height: calc(100% - 15mm); /* Leave space for running header */
+      justify-content: space-between;
+    }
+
+    .product-block {
+      background: var(--burgundy-light);
+      border-radius: 8px;
+      padding: 4mm;
+      border: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      height: 48%; /* Fits two per page perfectly */
+      justify-content: space-between;
+    }
+
+    .product-block-top {
+      display: flex;
+      gap: 4mm;
+    }
+
+    .product-block-img-wrap {
+      width: 40mm;
+      height: 30mm;
+      background: #fff;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      overflow: hidden;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .product-block-img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+
+    .product-block-meta {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .product-brand {
+      font-family: 'Outfit', sans-serif;
+      font-size: 8px;
+      font-weight: 800;
+      color: var(--gold);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .product-name {
+      font-family: 'Outfit', sans-serif;
+      font-size: 11px;
+      font-weight: 800;
+      color: var(--burgundy-dark);
+      margin-top: 1px;
+    }
+
+    .product-label {
+      font-size: 8px;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    .product-desc {
+      font-size: 8.5px;
+      color: var(--text-dark);
+      margin-top: 2.5mm;
+      line-height: 1.4;
+    }
+
+    .product-specs {
+      margin-top: 2.5mm;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1mm 3mm;
+      list-style: none;
+    }
+
+    .product-specs li {
+      font-size: 7.5px;
+      color: var(--text-muted);
+      position: relative;
+      padding-left: 2.5mm;
+    }
+
+    .product-specs li::before {
+      content: '▪';
+      color: var(--gold);
+      position: absolute;
+      left: 0;
+      font-size: 6px;
+      top: 0px;
+    }
+
+    /* Single full-width product layout */
+    .single-product-container {
+      display: flex;
+      flex-direction: column;
+      height: calc(100% - 15mm);
+      justify-content: space-between;
+    }
+
+    .single-prod-top-hero {
+      display: grid;
+      grid-template-columns: 55mm 1fr;
+      gap: 6mm;
+      margin-bottom: 4mm;
+    }
+
+    .single-prod-img-wrap {
+      height: 50mm;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      padding: 2mm;
+    }
+
+    .single-prod-img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+
+    .single-prod-meta {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .single-prod-brand {
+      font-family: 'Outfit', sans-serif;
+      font-size: 9px;
+      font-weight: 800;
+      color: var(--gold);
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    .single-prod-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 15px;
+      font-weight: 900;
+      color: var(--burgundy-dark);
+      margin-top: 1px;
+      line-height: 1.25;
+    }
+
+    .single-prod-tagline {
+      font-size: 9px;
+      font-weight: 600;
+      color: var(--burgundy);
+      margin-top: 1.5mm;
+      font-style: italic;
+    }
+
+    .single-prod-desc {
+      font-size: 9.5px;
+      color: var(--text-dark);
+      margin-top: 2.5mm;
+      line-height: 1.5;
+    }
+
+    .single-prod-specs-box {
+      background: var(--burgundy-light);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 4mm;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .specs-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 9px;
+      font-weight: 800;
+      color: var(--burgundy-dark);
+      text-transform: uppercase;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 1.5mm;
+      margin-bottom: 2mm;
+      letter-spacing: 0.5px;
+    }
+
+    .specs-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5mm 6mm;
+      list-style: none;
+    }
+
+    .specs-grid li {
+      font-size: 8px;
+      color: var(--text-dark);
+      position: relative;
+      padding-left: 3mm;
+      line-height: 1.35;
+    }
+
+    .specs-grid li::before {
+      content: '▪';
+      color: var(--burgundy);
+      position: absolute;
+      left: 0;
+      font-size: 6px;
+      top: 0px;
+    }
+
+    .single-prod-highlight {
+      margin-top: 3mm;
+      background: #fff;
+      border-left: 3px solid var(--gold);
+      padding: 2.5mm 3.5mm;
+      border-radius: 0 6px 6px 0;
+      font-size: 8.5px;
+      color: var(--burgundy-dark);
+      font-weight: 700;
+    }
+
+    /* ── COMPANY PROFILE PAGE ── */
+    .company-profile-content {
+      display: flex;
+      flex-direction: column;
+      gap: 4mm;
+      font-size: 9.5px;
+      line-height: 1.6;
+    }
+    .profile-highlight-box {
+      background: var(--burgundy-light);
+      border-left: 4px solid var(--burgundy);
+      padding: 4mm;
+      border-radius: 0 8px 8px 0;
+      margin: 2mm 0;
+    }
+    .profile-highlight-box h4 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 11px;
+      color: var(--burgundy-dark);
+      margin-bottom: 1.5mm;
+    }
+    .profile-stats-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 4mm;
+      text-align: center;
+      margin-top: 3mm;
+    }
+    .profile-stat-card {
+      background: #FDFBFC;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 3mm;
+    }
+    .profile-stat-num {
+      font-family: 'Outfit', sans-serif;
+      font-size: 20px;
+      font-weight: 900;
+      color: var(--burgundy);
+    }
+    .profile-stat-label {
+      font-size: 7.5px;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: var(--text-muted);
+      letter-spacing: 0.5px;
+    }
+
+    /* ── BACK COVER STYLES ── */
+    .back-cover-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 24px;
+      font-weight: 900;
+      color: var(--gold-light);
+      margin-bottom: 4mm;
+      text-transform: uppercase;
+    }
+    .back-cover-subtitle {
+      font-size: 11px;
+      color: #D3C2C8;
+      line-height: 1.5;
+    }
+    .back-cover-contact-list {
+      display: flex;
+      flex-direction: column;
+      gap: 5mm;
+      margin-top: 8mm;
+    }
+    .back-contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 4mm;
+    }
+    .back-contact-icon {
+      font-size: 16px;
+      color: var(--gold);
+      line-height: 1;
+      margin-top: 1px;
+    }
+    .back-contact-details h5 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 9px;
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 1px;
+    }
+    .back-contact-details p {
+      font-size: 10px;
+      color: #fff;
+      line-height: 1.5;
+    }
+    .back-cover-footer {
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding-top: 6mm;
+      text-align: center;
+      font-size: 8.5px;
+      color: #A58C97;
+    }
+
+    /* ── SCREEN SIMULATION PAGINATION CONTROLS ── */
+    .screen-page-indicator {
+      font-family: 'Outfit', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--burgundy-dark);
+      background: var(--gold-light);
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin-bottom: -15px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+
+    /* ── PRINT MEDIA RULES ── */
+    @media print {
+      /* Hide all UI elements */
+      .no-print-toolbar, 
+      .screen-page-indicator,
+      .catalogue-container-title {
+        display: none !important;
+      }
+      
+      body {
+        background-color: #fff !important;
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+      
+      .catalogue-container {
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        gap: 0 !important;
+      }
+      
+      .a5-page {
+        width: 148mm !important;
+        height: 210mm !important;
+        page-break-after: always !important;
+        break-after: page !important;
+        box-shadow: none !important;
+        border-radius: 0 !important;
+        margin: 0 !important;
+        border: none !important;
+        padding: 16mm 12mm !important;
+        page-break-inside: avoid !important;
+        /* Ensure backgrounds print correctly */
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+
+      .a5-page.cover-front, 
+      .a5-page.section-divider, 
+      .a5-page.cover-back {
+        padding: 20mm 15mm !important;
+      }
+
+      /* Webkit-specific overrides to enforce background graphics */
+      * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+    }
+
+    @page {
+      size: A5 portrait;
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NO-PRINT TOOLBAR -->
+  <div class="no-print-toolbar">
+    <div class="toolbar-brand">
+      <img src="sonoray-logo.jpg" alt="Sonoray Logo" class="toolbar-logo">
+      <div class="toolbar-title">
+        <h1>Sonoray Medical Systems</h1>
+        <p>A5 Printable Product Catalogue Booklet</p>
+      </div>
+    </div>
+    <div class="instructions-card">
+      <strong>💡 PDF Generation / Printing Guide:</strong><br>
+      Press the <strong>Print Booklet</strong> button. In the printer options: Set Destination to <strong>Save as PDF</strong>, Paper Size to <strong>A5</strong>, Margins to <strong>None/Zero</strong>, and enable <strong>Background Graphics</strong>.
+    </div>
+    <div class="toolbar-actions">
+      <a href="products.html" class="btn btn-back">← Back to Portal</a>
+      <button class="btn btn-print" onclick="window.print()">🖨️ Print Booklet</button>
+    </div>
+  </div>
+
+  <!-- BOOKLET CONTAINER -->
+  <div class="catalogue-container">
+
+    <!-- PAGE 1: FRONT COVER -->
+    <div class="screen-page-indicator">Page 1: Front Cover</div>
+    <div class="a5-page cover-front">
+      <div class="cover-header">
+        <div class="cover-logo-container">
+          <img src="sonoray-logo.jpg" alt="Sonoray Medical Systems" class="cover-logo">
+        </div>
+      </div>
+      <div class="cover-body">
+        <div class="cover-title-label">Product Catalogue</div>
+        <div class="cover-main-title">Diagnostic Imaging<br>&amp; Ultrasound</div>
+        <div class="cover-subtitle">Premium medical equipment and imaging solutions trusted by clinicians across India since 2004.</div>
+      </div>
+      <div class="cover-footer">
+        <div class="cover-footer-text">Sonoray Medical Systems</div>
+        <div class="cover-footer-sub">Authorised Dealer &amp; Service Provider</div>
+      </div>
+    </div>
+
+    <!-- PAGE 2: COMPANY PROFILE -->
+    <div class="screen-page-indicator">Page 2: Company Profile</div>
+    <div class="a5-page">
+      <div class="page-header-running">
+        <span>Corporate Profile</span>
+        <span>Sonoray Medical Systems</span>
+      </div>
+      <div class="page-title">Company Profile</div>
+      <div class="company-profile-content">
+        <p>Established in <strong>2004</strong> in Chennai, Tamil Nadu, <strong>Sonoray Medical Systems</strong> has grown into a leading and trusted supplier, dealer, and service provider of diagnostic imaging systems across India.</p>
+        
+        <p>We deliver an extensive portfolio of high-grade diagnostics, serving hospitals, diagnostics laboratories, and veterinary clinics. Our signature <strong>Sonoray DS Series</strong> provides state-of-the-art ultrasound machines that balance premium technology with accessibility.</p>
+        
+        <div class="profile-highlight-box">
+          <h4>Authorized SonoScape Partner</h4>
+          <p>As authorized dealers for SonoScape, we bring globally acclaimed AI-assisted diagnostic ultrasound solutions and high-frequency systems directly to modern healthcare settings.</p>
+        </div>
+
+        <p>We are also renowned for our specialized technical service, offering component-level repairs for all major brands of ultrasound probes and transducers to maximize equipment life.</p>
+        
+        <div class="profile-stats-grid">
+          <div class="profile-stat-card">
+            <div class="profile-stat-num">20+</div>
+            <div class="profile-stat-label">Years of Trust</div>
+          </div>
+          <div class="profile-stat-card">
+            <div class="profile-stat-num">500+</div>
+            <div class="profile-stat-label">Hospitals Serviced</div>
+          </div>
+          <div class="profile-stat-card">
+            <div class="profile-stat-num">24/7</div>
+            <div class="profile-stat-label">Service Support</div>
+          </div>
+        </div>
+      </div>
+      <div class="page-footer-running">
+        <span>sonoraymedicalsystems.in</span>
+        <span class="page-number">2</span>
+      </div>
+    </div>
+
+    <!-- PAGE 3: ULTRASOUND SECTION DIVIDER -->
+    <div class="screen-page-indicator">Page 3: Category Cover</div>
+    <div class="a5-page section-divider">
+      <div class="section-splash-tag">Category 01</div>
+      <div class="section-splash-title">Ultrasound<br>Imaging Systems</div>
+      <div class="section-splash-decor"></div>
+      <div class="section-splash-desc">Handheld, portable, and cart-based digital Doppler diagnostic stations.</div>
+    </div>
+
+    <!-- PAGE 4: HANDHELD ULTRASOUNDS - NANO C5 & NANO L12 -->
+    <div class="screen-page-indicator">Page 4: Handheld Probes</div>
+    <div class="a5-page">
+      <div class="page-header-running">
+        <span class="running-category">Ultrasound</span>
+        <span>Handheld Probes</span>
+      </div>
+      <div class="page-title">Wireless Handheld Probes</div>
+      <div class="split-container">
+        
+        <!-- Edan Nano C5 EXP -->
+        <div class="product-block">
+          <div class="product-block-top">
+            <div class="product-block-img-wrap">
+              <img src="nano-c5.jpg" alt="Edan Nano C5 EXP" class="product-block-img">
+            </div>
+            <div class="product-block-meta">
+              <span class="product-brand">Edan</span>
+              <span class="product-name">Nano C5 EXP</span>
+              <span class="product-label">Wireless Convex Probe</span>
+            </div>
+          </div>
+          <p class="product-desc">Pocket-sized wireless convex probe offering exceptional durability and continuous scanning via Android devices.</p>
+          <ul class="product-specs">
+            <li>Human &amp; Vet Diagnostics</li>
+            <li>Frequency: 2.0 - 5.0 MHz</li>
+            <li>Scan Modes: B, C, M, PW</li>
+            <li>IP67 Water &amp; Dust Rated</li>
+            <li>Weight: Approx. 240g</li>
+            <li>Type-C Charging (5 Hrs)</li>
+          </ul>
+        </div>
+
+        <!-- Edan Nano L12 EXP -->
+        <div class="product-block">
+          <div class="product-block-top">
+            <div class="product-block-img-wrap">
+              <img src="nano-l12.jpg" alt="Edan Nano L12 EXP" class="product-block-img">
+            </div>
+            <div class="product-block-meta">
+              <span class="product-brand">Edan</span>
+              <span class="product-name">Nano L12 EXP</span>
+              <span class="product-label">Wireless Linear Probe</span>
+            </div>
+          </div>
+          <p class="product-desc">High-frequency linear probe supporting both wired and wireless connection for precise superficial diagnostics.</p>
+          <ul class="product-specs">
+            <li>Human &amp; Vet Diagnostics</li>
+            <li>Frequency: 4.0 - 13.0 MHz</li>
+            <li>Scan Depth: 0.5 - 10 cm</li>
+            <li>Scan Modes: B, C, M, PW, PDI</li>
+            <li>Weight: Approx. 216g</li>
+            <li>Type-C USB &amp; Wireless</li>
+          </ul>
+        </div>
+
+      </div>
+      <div class="page-footer-running">
+        <span>Diagnostic Ultrasound</span>
+        <span class="page-number">4</span>
+      </div>
+    </div>
+
+    <!-- PAGE 5: HANDHELD ULTRASOUNDS - ENDORECTAL & FARM SCANNER -->
+    <div class="screen-page-indicator">Page 5: Veterinary Scanners</div>
+    <div class="a5-page">
+      <div class="page-header-running">
+        <span class="running-category">Ultrasound</span>
+        <span>Veterinary Probes</span>
+      </div>
+      <div class="page-title">Specialized Vet Scanners</div>
+      <div class="split-container">
+        
+        <!-- Wired Endorectal Probe -->
+        <div class="product-block">
+          <div class="product-block-top">
+            <div class="product-block-img-wrap">
+              <img src="wired-endorectal.jpg" alt="Wired Endorectal" class="product-block-img">
+            </div>
+            <div class="product-block-meta">
+              <span class="product-brand">Sonoray</span>
+              <span class="product-name">Wired Endorectal</span>
+              <span class="product-label">Endorectal Vet Probe</span>
+            </div>
+          </div>
+          <p class="product-desc">Specialized large animal pregnancy scanner compatible directly with Android smartphones and tablets.</p>
+          <ul class="product-specs">
+            <li>Large Animal Diagnostics</li>
+            <li>Frequency: 5.5 - 7.5 MHz</li>
+            <li>Scan Depth: 3.0 to 12.0 cm</li>
+            <li>Scan Modes: B, M, 2B</li>
+            <li>Android Compatible</li>
+            <li>Ergonomic Handle Design</li>
+          </ul>
+        </div>
+
+        <!-- Farm Scanner -->
+        <div class="product-block">
+          <div class="product-block-top">
+            <div class="product-block-img-wrap">
+              <img src="farm-scanner.jpg" alt="Farm Scanner" class="product-block-img">
+            </div>
+            <div class="product-block-meta">
+              <span class="product-brand">Sonoray</span>
+              <span class="product-name">Farm Scanner</span>
+              <span class="product-label">Stand-alone Vet Unit</span>
+            </div>
+          </div>
+          <p class="product-desc">Rugged, standalone portable scanner with built-in color display designed for demanding field veterinary work.</p>
+          <ul class="product-specs">
+            <li>Specialized for Field Vet</li>
+            <li>Frequency: 2.0 - 10.0 MHz</li>
+            <li>5.8" TFT Color Display</li>
+            <li>Weight: 0.6 kg (with Battery)</li>
+            <li>Dimensions: 250 x 120 x 40mm</li>
+            <li>420 frame Cine Loop Memory</li>
+          </ul>
+        </div>
+
+      </div>
+      <div class="page-footer-running">
+        <span>Diagnostic Ultrasound</span>
+        <span class="page-number">5</span>
+      </div>
+    </div>
+
+    <!-- PAGE 6: HANDHELD ULTRASOUNDS - INTERCHANGEABLE & C10 RS -->
+    <div class="screen-page-indicator">Page 6: Multi-Probe &amp; Microconvex</div>
+    <div class="a5-page">
+      <div class="page-header-running">
+        <span class="running-category">Ultrasound</span>
+        <span>Versatile Handhelds</span>
+      </div>
+      <div class="page-title">Compact Pocket Scanners</div>
+      <div class="split-container">
+        
+        <!-- Interchangeable Probes System -->
+        <div class="product-block">
+          <div class="product-block-top">
+            <div class="product-block-img-wrap">
+              <img src="interchangeable-probes.jpg" alt="Interchangeable Probes" class="product-block-img">
+            </div>
+            <div class="product-block-meta">
+              <span class="product-brand">Sonoray</span>
+              <span class="product-name">Interchangeable Unit</span>
+              <span class="product-label">Multi-Probe Platform</span>
+            </div>
+          </div>
+          <p class="product-desc">A single pocket-sized base unit supporting 10 different interchangeable 128-element probes for ultimate versatility.</p>
+          <ul class="product-specs">
+            <li>128-Element Probes</li>
+            <li>Android, iOS &amp; Windows</li>
+            <li>Modes: B, C, PW, PDI, Triplex</li>
+            <li>10 Interchangeable Heads</li>
+            <li>Wireless &amp; Type-C USB</li>
+            <li>Image/Video Save &amp; Print</li>
+          </ul>
+        </div>
+
+        <!-- C10 RS Microconvex -->
+        <div class="product-block">
+          <div class="product-block-top">
+            <div class="product-block-img-wrap">
+              <img src="c10rs-probe.jpg" alt="C10 RS Microconvex" class="product-block-img">
+            </div>
+            <div class="product-block-meta">
+              <span class="product-brand">Sonoray</span>
+              <span class="product-name">C10 RS Microconvex</span>
+              <span class="product-label">Wireless Microconvex</span>
+            </div>
+          </div>
+          <p class="product-desc">High-performance wireless microconvex probe with a massive battery for extended clinical scanning sessions.</p>
+          <ul class="product-specs">
+            <li>Human &amp; Vet Diagnostics</li>
+            <li>Frequency: 5.0 - 7.0 MHz</li>
+            <li>Scan Depth: 60 - 160 mm</li>
+            <li>Modes: B, B+M, C, PW, PDI</li>
+            <li>Battery: 4200 mAh Inbuilt</li>
+            <li>Extremely Light: 221g</li>
+          </ul>
+        </div>
+
+      </div>
+      <div class="page-footer-running">
+        <span>Diagnostic Ultrasound</span>
+        <span class="page-number">6</span>
+      </div>
+    </div>
+
+    <!-- PAGE 7: PORTABLE SYSTEM - DS-30 PLUS -->
+    <div class="screen-page-indicator">Page 7: Portable Systems</div>
+    <div class="a5-page">
+      <div class="page-header-running">
+        <span class="running-category">Ultrasound</span>
+        <span>Portable Black &amp; White</span>
+      </div>
+      <div class="page-title">DS-30 Plus System</div>
+      <div class="single-product-container">
+        <div class="single-prod-top-hero">
+          <div class="single-prod-img-wrap">
+            <img src="ds30plus.png" alt="DS-30 Plus" class="single-prod-img">
+          </div>
+          <div class="single-prod-meta">
+            <span class="single-prod-brand">Sonoray</span>
+            <h3 class="single-prod-title">DS-30 Plus</h3>
+            <span class="single-prod-tagline">Digital Ultrasonic Diagnostic System</span>
+            <p class="single-prod-desc">Versatile, ultra-lightweight entry level digital ultrasound machine perfect for point-of-care, abdominal, GYN/OB, and cardiac diagnostics.</p>
+          </div>
+        </div>
+
+        <div class="single-prod-specs-box">
+          <div class="specs-title">Technical Specifications &amp; Features</div>
+          <ul class="specs-grid">
+            <li><strong>Display:</strong> 12.1-inch High-resolution TFT LCD</li>
+            <li><strong>Ports:</strong> Dual Active Transducer Connectors</li>
+            <li><strong>Portability:</strong> Weighs only 6 Kgs</li>
+            <li><strong>Imaging Modes:</strong> B, B+B, B+M, M, 4B</li>
+            <li><strong>Advanced Tech:</strong> Tissue Harmonic Imaging (THI)</li>
+            <li><strong>Optimization:</strong> 8 Segment TGC Control</li>
+            <li><strong>Doppler:</strong> Pulse Wave (PW) Doppler included</li>
+            <li><strong>Memory:</strong> 4GB Expandable Storage</li>
+            <li><strong>Cine Loop:</strong> 256 Frame Cine Memory</li>
+            <li><strong>Applications:</strong> Urology, Abdominal, Small Parts</li>
+          </ul>
+          <div class="single-prod-highlight">
+            ✦ Reliable, compact B&amp;W scanner with clinical flexibility.
+          </div>
+        </div>
+      </div>
+      <div class="page-footer-running">
+        <span>Sonoray DS Series</span>
+        <span class="page-number">7</span>
+      </div>
+    </div>
+
+    <!-- PAGE 8: PORTABLE SYSTEM - DS-50 -->
+    <div class="screen-page-indicator">Page 8: Portable Systems</div>
+    <div class="a5-page">
+      <div class="page-header-running">
+        <span class="running-category">Ultrasound</span>
+        <span>Portable Color Doppler</span>
+      </div>
+      <div class="page-title">DS-50 Color Doppler</div>
+      <div class="single-product-container">
+        <div class="single-prod-top-hero">
+          <div class="single-prod-img-wrap">
+            <img src="ds50.png" alt="DS-50" class="single-prod-img">
+          </div>
+          <div class="single-prod-meta">
+            <span class="single-prod-brand">Sonoray</span>
+            <h3 class="single-prod-title">DS-50 Color Doppler</h3>
+            <span class="single-prod-tagline">Digital Color Doppler System</span>
+            <p class="single-prod-desc">Compact Linux-based portable color system providing exceptional spatial resolution and advanced intelligent image optimization workflows.</p>
+          </div>
+        </div>
+
+        <div class="single-prod-specs-box">
+          <div class="specs-title">Technical Specifications &amp; Features</div>
+          <ul class="specs-grid">
+            <li><strong>Monitor:</strong> 12.1" LED with 30° Tilt facility</li>
+            <li><strong>Ports:</strong> 2 Transducer Connectors</li>
+            <li><strong>Operating System:</strong> Stable Linux Platform</li>
+            <li><strong>Modes:</strong> B, B+B, 4B, B/M, M, CPA, DPD, PW, THI</li>
+            <li><strong>Angio:</strong> Color Power Angio (CPA)</li>
+            <li><strong>Speckle Reduction:</strong> SRA Algorithm</li>
+            <li><strong>Special Modes:</strong> Compound &amp; Trapezoid Imaging</li>
+            <li><strong>Auto Trace:</strong> Automatic Real-Time PW Trace</li>
+            <li><strong>Storage:</strong> 2000+ Image Inbuilt Storage</li>
+            <li><strong>Connectivity:</strong> USB Ports for quick export</li>
+          </ul>
+          <div class="single-prod-highlight">
+            ✦ Features i-Imaging (Intelligent Image Optimization).
+          </div>
+        </div>
+      </div>
+      <div class="page-footer-running">
+        <span>Sonoray DS Series</span>
+        <span class="page-number">8</span>
+      </div>
+    </div>
+
+    <!-- PAGE 9: PORTABLE SYSTEM - DS-50 PLUS -->
+    <div class="screen-page-indicator">Page 9: Premium Portable</div>
+    <div class="a5-page">
+      <div class="page-header-running">
+        <span class="running-category">Ultrasound</span>
+        <span>Premium Portable Color Doppler</span>
+      </div>
+      <div class="page-title">DS-50 Plus Doppler</div>
+      <div class="single-product-container">
+        <div class="single-prod-top-hero">
+          <div class="single-prod-img-wrap">
+            <img src="ds50plus.png" alt="DS-50 Plus" class="single-prod-img">
+          </div>
+          <div class="single-prod-meta">
+            <span class="single-prod-brand">Sonoray</span>
+            <h3 class="single-prod-title">DS-50 Plus</h3>
+            <span class="single-prod-tagline">Advanced Digital Color Doppler</span>
+            <p class="single-prod-desc">Radiology and multi-specialty-grade portable ultrasound featuring comprehensive diagnostic software suites and extensive storage capacity.</p>
+          </div>
+        </div>
+
+        <div class="single-prod-specs-box">
+          <div class="specs-title">Technical Specifications &amp; Features</div>
+          <ul class="specs-grid">
+            <li><strong>Display:</strong> 12.1-inch High Definition LCD</li>
+            <li><strong>Ports:</strong> Dual Active Probe Connectors</li>
+            <li><strong>Modes:</strong> Color, PWD, HPRF, Power Doppler, Live Dual</li>
+            <li><strong>Beam Former:</strong> Full Digital Beam Forming Tech</li>
+            <li><strong>Harmonic Imaging:</strong> Phase Inversion Harmonic</li>
+            <li><strong>Processing:</strong> Spatial Compound Imaging &amp; TSI</li>
+            <li><strong>Software:</strong> OB/GYN, Cardiac, Vascular, MSK</li>
+            <li><strong>Storage:</strong> 500GB Internal Hard Disk</li>
+            <li><strong>Transducers:</strong> High-density Multi-frequency</li>
+            <li><strong>Speckle Filter:</strong> Adaptive SRA filtering</li>
+          </ul>
+          <div class="single-prod-highlight">
+            ✦ Ideal for multi-specialty clinics and radiology centers.
+          </div>
+        </div>
+      </div>
+      <div class="page-footer-running">
+        <span>Sonoray DS Series</span>
+        <span class="page-number">9</span>
+      </div>
+    </div>
+
+    <!-- PAGE 10: PORTABLE SYSTEM - DS-100 PLUS -->
+    <div class="screen-page-indicator">Page 10: Android Portable</div>
+    <div class="a5-page">
+      <div class="page-header-running">
+        <span class="running-category">Ultrasound</span>
+        <span>Touch Pad Color Doppler</span>
+      </div>
+      <div class="page-title">DS-100 Plus Doppler</div>
+      <div class="single-product-container">
+        <div class="single-prod-top-hero">
+          <div class="single-prod-img-wrap">
+            <img src="ds100plus.png" alt="DS-100 Plus" class="single-prod-img">
+          </div>
+          <div class="single-prod-meta">
+            <span class="single-prod-brand">Sonoray</span>
+            <h3 class="single-prod-title">DS-100 Plus</h3>
+            <span class="single-prod-tagline">Dual Screen Mobile Doppler</span>
+            <p class="single-prod-desc">Modern Android-operated dual display system. Featuring physical control keys, touch operation panel, and integrated battery power.</p>
+          </div>
+        </div>
+
+        <div class="single-prod-specs-box">
+          <div class="specs-title">Technical Specifications &amp; Features</div>
+          <ul class="specs-grid">
+            <li><strong>Display:</strong> 15.6" Main Monitor + 10.1" Touch Pad</li>
+            <li><strong>OS:</strong> Android-based intuitive user interface</li>
+            <li><strong>Weight:</strong> Ultra-lightweight at less than 4.5 Kgs</li>
+            <li><strong>Battery:</strong> 2 Hours Inbuilt Scan Extender</li>
+            <li><strong>Doppler:</strong> PW, CW, Power, and Adaptive Flow</li>
+            <li><strong>Cardiac:</strong> Anatomical M-Mode included</li>
+            <li><strong>Modes:</strong> B, C, Doppler, Trapezoidal, THI</li>
+            <li><strong>Storage:</strong> 500GB solid-state hard drive</li>
+            <li><strong>Connectivity:</strong> Full clinical export options</li>
+            <li><strong>Portability:</strong> Ergonomic carrying handle</li>
+          </ul>
+          <div class="single-prod-highlight">
+            ✦ Top choice for hospital wards and bedside diagnostics.
+          </div>
+        </div>
+      </div>
+      <div class="page-footer-running">
+        <span>Sonoray DS Series</span>
+        <span class="page-number">10</span>
+      </div>
+    </div>
+
+    <!-- PAGE 11: PORTABLE SYSTEM - SONOSCAPE E2V -->
+    <div class="screen-page-indicator">Page 11: SonoScape Portable</div>
+    <div class="a5-page">
+      <div class="page-header-running">
+        <span class="running-category">Ultrasound</span>
+        <span>Authorised SonoScape Product</span>
+      </div>
+      <div class="page-title">SonoScape E2V</div>
+      <div class="single-product-container">
+        <div class="single-prod-top-hero">
+          <div class="single-prod-img-wrap">
+            <img src="ss-e2v.png" alt="SonoScape E2V" class="single-prod-img">
+          </div>
+          <div class="single-prod-meta">
+            <span class="single-prod-brand">SonoScape</span>
+            <h3 class="single-prod-title">SonoScape E2V</h3>
+            <span class="single-prod-tagline">Premium Portable Color Doppler</span>
+            <p class="single-prod-desc">Highly compact, high-definition system powered by advanced µ-Scan speckle reduction algorithms and spatial compounding technologies.</p>
+          </div>
+        </div>
+
+        <div class="single-prod-specs-box">
+          <div class="specs-title">Technical Specifications &amp; Features</div>
+          <ul class="specs-grid">
+            <li><strong>Monitor:</strong> 15.6" HD LCD with Full-Screen layout</li>
+            <li><strong>Ports:</strong> 2 Active Probe Ports (Expandable to 3)</li>
+            <li><strong>Weight:</strong> Approx. 6 Kgs</li>
+            <li><strong>Battery:</strong> Up to 3 Hours with battery extender</li>
+            <li><strong>Technology:</strong> µ-Scan Multi-beam Imaging</li>
+            <li><strong>Flow modes:</strong> Color, Power, PW, CW Doppler</li>
+            <li><strong>Imaging:</strong> Spatial Compound, THI, Vis-Needle</li>
+            <li><strong>DICOM:</strong> Full DICOM 3.0 compliance</li>
+            <li><strong>Optimization:</strong> Auto-Optimization key</li>
+            <li><strong>App Packages:</strong> Cardiac, OB/GYN, MSK, Vascular</li>
+          </ul>
+          <div class="single-prod-highlight">
+            ✦ Includes Panoramic Imaging and real-time needle guidance.
+          </div>
+        </div>
+      </div>
+      <div class="page-footer-running">
+        <span>Authorised Dealer Portfolio</span>
+        <span class="page-number">11</span>
+      </div>
+    </div>
+
+    <!-- PAGE 12: TROLLEY SYSTEM - DS-150 PLUS -->
+    <div class="screen-page-indicator">Page 12: Trolley Systems</div>
+    <div class="a5-page">
+      <div class="page-header-running">
+        <span class="running-category">Ultrasound</span>
+        <span>Cart-Based Color Doppler</span>
+      </div>
+      <div class="page-title">DS-150 Plus Workstation</div>
+      <div class="single-product-container">
+        <div class="single-prod-top-hero">
+          <div class="single-prod-img-wrap">
+            <img src="ds150plus.png" alt="DS-150 Plus" class="single-prod-img">
+          </div>
+          <div class="single-prod-meta">
+            <span class="single-prod-brand">Sonoray</span>
+            <h3 class="single-prod-title">DS-150 Plus</h3>
+            <span class="single-prod-tagline">Digital Trolley Color Doppler</span>
+            <p class="single-prod-desc">Professional cart-based Doppler workstation designed to handle high patient volumes in major imaging centers and hospitals.</p>
+          </div>
+        </div>
+
+        <div class="single-prod-specs-box">
+          <div class="specs-title">Technical Specifications &amp; Features</div>
+          <ul class="specs-grid">
+            <li><strong>Monitor:</strong> 19-inch High Resolution Color LCD</li>
+            <li><strong>Ports:</strong> 4 Active Transducer Ports</li>
+            <li><strong>Ergonomics:</strong> 180° Rotatable Display Head</li>
+            <li><strong>Beam Tech:</strong> Multi-Beam Forming Optimization</li>
+            <li><strong>Filtration:</strong> Speckle Resistance Filtering</li>
+            <li><strong>Modes:</strong> B, B/B, B/M, 4B, Color, PW, Power</li>
+            <li><strong>Software:</strong> OB/GYN, Urology, Vascular, Abdomen</li>
+            <li><strong>Imaging:</strong> Spatial Compound Imaging</li>
+            <li><strong>Storage:</strong> Large Capacity integrated hard drive</li>
+            <li><strong>Transducers:</strong> High-density multi-frequency series</li>
+          </ul>
+          <div class="single-prod-highlight">
+            ✦ Multi-port convenience for high-efficiency clinical routines.
+          </div>
+        </div>
+      </div>
+      <div class="page-footer-running">
+        <span>Sonoray DS Series</span>
+        <span class="page-number">12</span>
+      </div>
+    </div>
+
+    <!-- PAGE 13: TROLLEY SYSTEM - DS-200 PLUS -->
+    <div class="screen-page-indicator">Page 13: Flagship Workstation</div>
+    <div class="a5-page">
+      <div class="page-header-running">
+        <span class="running-category">Ultrasound</span>
+        <span>Flagship Trolley Doppler</span>
+      </div>
+      <div class="page-title">DS-200 Plus Flagship</div>
+      <div class="single-product-container">
+        <div class="single-prod-top-hero">
+          <div class="single-prod-img-wrap">
+            <img src="ds200plus.png" alt="DS-200 Plus" class="single-prod-img">
+          </div>
+          <div class="single-prod-meta">
+            <span class="single-prod-brand">Sonoray</span>
+            <h3 class="single-prod-title">DS-200 Plus</h3>
+            <span class="single-prod-tagline">Advanced Diagnostic Workstation</span>
+            <p class="single-prod-desc">Top-of-the-line cart system offering absolute imaging precision, elastography, tissue Doppler, and comprehensive clinical analytics.</p>
+          </div>
+        </div>
+
+        <div class="single-prod-specs-box">
+          <div class="specs-title">Technical Specifications &amp; Features</div>
+          <ul class="specs-grid">
+            <li><strong>Display:</strong> 21.5" LCD Monitor + 14" Touch Panel</li>
+            <li><strong>Ports:</strong> 3 Active Transducer Ports</li>
+            <li><strong>Power Backup:</strong> 2 Hours built-in UPS battery</li>
+            <li><strong>Advanced Modes:</strong> CW, TDI, Elastography, Auto IMT</li>
+            <li><strong>Acoustics:</strong> Tissue Adopting Imaging (TAI)</li>
+            <li><strong>Processing:</strong> Trapezoidal &amp; Anatomical M-Mode</li>
+            <li><strong>Storage:</strong> 500GB Internal SSD Storage</li>
+            <li><strong>Training:</strong> Inbuilt eLearn Instruction Suite</li>
+            <li><strong>Outputs:</strong> HDMI, S-Video, USB, Ethernet</li>
+            <li><strong>Software:</strong> Full human &amp; veterinary package</li>
+          </ul>
+          <div class="single-prod-highlight">
+            ✦ Premier workstation for advanced diagnostic and tertiary care.
+          </div>
+        </div>
+      </div>
+      <div class="page-footer-running">
+        <span>Sonoray DS Series</span>
+        <span class="page-number">13</span>
+      </div>
+    </div>
+
+    <!-- PAGE 14: TROLLEY SYSTEM - SONOSCAPE S12 -->
+    <div class="screen-page-indicator">Page 14: SonoScape Trolley</div>
+    <div class="a5-page">
+      <div class="page-header-running">
+        <span class="running-category">Ultrasound</span>
+        <span>Authorised SonoScape Product</span>
+      </div>
+      <div class="page-title">SonoScape S12</div>
+      <div class="single-product-container">
+        <div class="single-prod-top-hero">
+          <div class="single-prod-img-wrap">
+            <img src="ss-s12.png" alt="SonoScape S12" class="single-prod-img">
+          </div>
+          <div class="single-prod-meta">
+            <span class="single-prod-brand">SonoScape</span>
+            <h3 class="single-prod-title">SonoScape S12</h3>
+            <span class="single-prod-tagline">Multi-Specialty Cart System</span>
+            <p class="single-prod-desc">Ergonomic articulating system featuring advanced 3D/4D rendering, intima-media thickness (Auto-IMT) scoring, and full DICOM connectivity.</p>
+          </div>
+        </div>
+
+        <div class="single-prod-specs-box">
+          <div class="specs-title">Technical Specifications &amp; Features</div>
+          <ul class="specs-grid">
+            <li><strong>Display:</strong> 15" Articulating HD LED Monitor</li>
+            <li><strong>Ports:</strong> 4 Active Transducer Connectors</li>
+            <li><strong>3D/4D:</strong> Advanced real-time volumetric imaging</li>
+            <li><strong>Image Engine:</strong> µ-Scan Speckle Reduction</li>
+            <li><strong>Compounding:</strong> Spatial Compound Imaging (SCI)</li>
+            <li><strong>Flow Tech:</strong> Color Doppler, DPI, PW, Panoramic</li>
+            <li><strong>Scoring:</strong> Automated Auto-IMT measurement</li>
+            <li><strong>Export:</strong> USB, DVD, PDF Report Direct Export</li>
+            <li><strong>DICOM:</strong> Full DICOM 3.0 configuration</li>
+            <li><strong>Acoustics:</strong> Pulse Inversion Harmonic Imaging</li>
+          </ul>
+          <div class="single-prod-highlight">
+            ✦ Perfect for multi-specialty hospitals and OB/GYN departments.
+          </div>
+        </div>
+      </div>
+      <div class="page-footer-running">
+        <span>Authorised Dealer Portfolio</span>
+        <span class="page-number">14</span>
+      </div>
+    </div>
+
+    <!-- PAGE 15: TROLLEY SYSTEM - SONOSCAPE PROPET 60 -->
+    <div class="screen-page-indicator">Page 15: AI Trolley System</div>
+    <div class="a5-page">
+      <div class="page-header-running">
+        <span class="running-category">Ultrasound</span>
+        <span>Authorised SonoScape Product</span>
+      </div>
+      <div class="page-title">SonoScape Propet 60</div>
+      <div class="single-product-container">
+        <div class="single-prod-top-hero">
+          <div class="single-prod-img-wrap">
+            <img src="ss-propet60.png" alt="SonoScape Propet 60" class="single-prod-img">
+          </div>
+          <div class="single-prod-meta">
+            <span class="single-prod-brand">SonoScape</span>
+            <h3 class="single-prod-title">Propet 60 (Wis+ AI)</h3>
+            <span class="single-prod-tagline">AI-Powered Premium System</span>
+            <p class="single-prod-desc">Flagship AI system built on the Wis+ deep learning framework. Delivers automated tissue boundaries, micro-vessel tracking, and stress echo.</p>
+          </div>
+        </div>
+
+        <div class="single-prod-specs-box">
+          <div class="specs-title">Technical Specifications &amp; Features</div>
+          <ul class="specs-grid">
+            <li><strong>Display:</strong> 21.5" HD LED + 13.3" Articulating Touch Panel</li>
+            <li><strong>Ports:</strong> 5 Active Ports + 1 Pencil Port</li>
+            <li><strong>AI Platform:</strong> Wis+ Deep Learning Auto analysis</li>
+            <li><strong>Microflow:</strong> Micro F micro-vessel visualization</li>
+            <li><strong>Render:</strong> S-Live &amp; S-Silhouette 4D rendering</li>
+            <li><strong>Cardiac:</strong> MQA (Myocardium Quantitative Analysis)</li>
+            <li><strong>Doppler:</strong> Color, Power, PW, CW, TDI, Stress Echo</li>
+            <li><strong>Convenience:</strong> Integrated gel warmer &amp; Wi-Fi link</li>
+            <li><strong>Backup:</strong> Internal emergency power system</li>
+            <li><strong>Software:</strong> Full Cardiac, Vascular, Pelvic, OB/GYN</li>
+          </ul>
+          <div class="single-prod-highlight">
+            ✦ Our most advanced deep-learning assisted diagnostic platform.
+          </div>
+        </div>
+      </div>
+      <div class="page-footer-running">
+        <span>Authorised Dealer Portfolio</span>
+        <span class="page-number">15</span>
+      </div>
+    </div>
+
+    <!-- PAGE 16: X-RAY SECTION DIVIDER -->
+    <div class="screen-page-indicator">Page 16: Category Cover</div>
+    <div class="a5-page section-divider">
+      <div class="section-splash-tag">Category 02</div>
+      <div class="section-splash-title">Digital &amp; Portable<br>X-Ray Systems</div>
+      <div class="section-splash-decor"></div>
+      <div class="section-splash-desc">High-frequency mobile generators, battery-powered portables, and DR flat panel systems.</div>
+    </div>
+
+    <!-- PAGE 17: PORTABLE X-RAYS - ALERIO 1600 & 2800 -->
+    <div class="screen-page-indicator">Page 17: Portable X-Rays</div>
+    <div class="a5-page">
+      <div class="page-header-running">
+        <span class="running-category">X-Ray Systems</span>
+        <span>Portable Generators</span>
+      </div>
+      <div class="page-title">Alerio Portable X-Rays</div>
+      <div class="split-container">
+        
+        <!-- Alerio Smart 1600 -->
+        <div class="product-block">
+          <div class="product-block-top">
+            <div class="product-block-img-wrap">
+              <img src="alerio1600.jpg" alt="Alerio Smart 1600" class="product-block-img">
+            </div>
+            <div class="product-block-meta">
+              <span class="product-brand">Alerio</span>
+              <span class="product-name">Smart 1600</span>
+              <span class="product-label">Battery Powered Portable</span>
+            </div>
+          </div>
+          <p class="product-desc">Ultra-lightweight, cordless digital X-ray unit designed for emergencies, field hospitals, and intensive care point-of-care.</p>
+          <ul class="product-specs">
+            <li>Human &amp; Vet Diagnostics</li>
+            <li>Peak Power: 1.6 kW</li>
+            <li>kV Range: 40 kV – 90 kV</li>
+            <li>Weight: Less than 10 Kgs</li>
+            <li>Focal Spot: 0.8 mm</li>
+            <li>100+ Exposures per Charge</li>
+          </ul>
+        </div>
+
+        <!-- Alerio Smart 2800 -->
+        <div class="product-block">
+          <div class="product-block-top">
+            <div class="product-block-img-wrap">
+              <img src="alerio2800.jpg" alt="Alerio Smart 2800" class="product-block-img">
+            </div>
+            <div class="product-block-meta">
+              <span class="product-brand">Alerio</span>
+              <span class="product-name">Smart 2800</span>
+              <span class="product-label">HF Portable Generator</span>
+            </div>
+          </div>
+          <p class="product-desc">Versatile, high-power system perfect for small clinics, emergency wards, and mobile diagnostic ambulance vehicles.</p>
+          <ul class="product-specs">
+            <li>Human &amp; Vet Diagnostics</li>
+            <li>Peak Power: 2.8 kW (70 mA)</li>
+            <li>kV Range: 40 kV – 100 kV</li>
+            <li>Weight: Less than 12 Kgs</li>
+            <li>Focal Spot: 1.2 mm</li>
+            <li>100+ kHz HF Inverter</li>
+          </ul>
+        </div>
+
+      </div>
+      <div class="page-footer-running">
+        <span>Alerio Diagnostic Solutions</span>
+        <span class="page-number">17</span>
+      </div>
+    </div>
+
+    <!-- PAGE 18: MOBILE X-RAYS - ALERIO 4200 & 5000 -->
+    <div class="screen-page-indicator">Page 18: Mobile X-Rays</div>
+    <div class="a5-page">
+      <div class="page-header-running">
+        <span class="running-category">X-Ray Systems</span>
+        <span>Mobile Ward Units</span>
+      </div>
+      <div class="page-title">Alerio Mobile X-Rays</div>
+      <div class="split-container">
+        
+        <!-- Alerio Smart 4200 -->
+        <div class="product-block">
+          <div class="product-block-top">
+            <div class="product-block-img-wrap">
+              <img src="alerio4200.jpg" alt="Alerio Smart 4200" class="product-block-img">
+            </div>
+            <div class="product-block-meta">
+              <span class="product-brand">Alerio</span>
+              <span class="product-name">Smart 4200</span>
+              <span class="product-label">HF Mobile X-Ray</span>
+            </div>
+          </div>
+          <p class="product-desc">Advanced dual-focus mobile unit offering high-quality clinical imaging at lower exposure settings for ERs and bedsides.</p>
+          <ul class="product-specs">
+            <li>Output Power: 4.2 kW</li>
+            <li>kV Range: 40 kV – 120 kV</li>
+            <li>mAs Range: 0.1 – 250 mAs</li>
+            <li>Focal Spot: 0.6 mm / 1.8 mm</li>
+            <li>Inbuilt Voltage Stabilizer</li>
+            <li>APR Command Control Panel</li>
+          </ul>
+        </div>
+
+        <!-- Alerio Smart 5000 -->
+        <div class="product-block">
+          <div class="product-block-top">
+            <div class="product-block-img-wrap">
+              <img src="alerio5000.jpg" alt="Alerio Smart 5000" class="product-block-img">
+            </div>
+            <div class="product-block-meta">
+              <span class="product-brand">Alerio</span>
+              <span class="product-name">Smart 5000</span>
+              <span class="product-label">Premium Mobile X-Ray</span>
+            </div>
+          </div>
+          <p class="product-desc">Powerful 5kW mobile DC generator technology for highly stable radiation and superior high-contrast imaging in hospital ICUs.</p>
+          <ul class="product-specs">
+            <li>Output Power: 5.0 kW</li>
+            <li>kV Range: 40 kV – 100 kV</li>
+            <li>mAs Range: 0.3 – 250 mAs</li>
+            <li>Focal Spot: 2.2 mm Size</li>
+            <li>Maneuverable: Weight < 80kg</li>
+            <li>Manual Collimator with LED</li>
+          </ul>
+        </div>
+
+      </div>
+      <div class="page-footer-running">
+        <span>Alerio Diagnostic Solutions</span>
+        <span class="page-number">18</span>
+      </div>
+    </div>
+
+    <!-- PAGE 19: CR AND DR SYSTEMS - ERAY GOLD & AEROX DR -->
+    <div class="screen-page-indicator">Page 19: Flat Panel Detectors</div>
+    <div class="a5-page">
+      <div class="page-header-running">
+        <span class="running-category">X-Ray Systems</span>
+        <span>Digital Radiography (DR)</span>
+      </div>
+      <div class="page-title">Digital DR Flat Panels</div>
+      <div class="split-container">
+        
+        <!-- Edusoft ERAY Gold -->
+        <div class="product-block">
+          <div class="product-block-top">
+            <div class="product-block-img-wrap">
+              <img src="eray-gold.jpg" alt="ERAY Gold" class="product-block-img">
+            </div>
+            <div class="product-block-meta">
+              <span class="product-brand">Edusoft</span>
+              <span class="product-name">ERAY Gold</span>
+              <span class="product-label">Wireless Flat Panel</span>
+            </div>
+          </div>
+          <p class="product-desc">Premium, robust wireless DR detector delivering high-resolution clinical images in under 2 seconds for workflows.</p>
+          <ul class="product-specs">
+            <li>CsI (Cesium Iodide) Scintillator</li>
+            <li>Pixel Size: 140 µm (16-bit)</li>
+            <li>Sizes: 14"x17" and 17"x17"</li>
+            <li>Battery: >8 Hours Hot-Swap</li>
+            <li>IPX6 Water-Resistant Core</li>
+            <li>300kg Load Weight Capacity</li>
+          </ul>
+        </div>
+
+        <!-- Konica Minolta AeroX DR -->
+        <div class="product-block">
+          <div class="product-block-top">
+            <div class="product-block-img-wrap">
+              <img src="aerox-dr.jpg" alt="AeroX DR" class="product-block-img">
+            </div>
+            <div class="product-block-meta">
+              <span class="product-brand">Konica Minolta</span>
+              <span class="product-name">AeroX DR</span>
+              <span class="product-label">Digital DR System</span>
+            </div>
+          </div>
+          <p class="product-desc">Highly reliable, ultra-lightweight wireless DR detector backed by Konica Minolta's imaging algorithms for PACS integration.</p>
+          <ul class="product-specs">
+            <li>High-Sensitivity CsI Tech</li>
+            <li>High Resolution: 3072 x 3072</li>
+            <li>Pixel Pitch: 100 µm Size</li>
+            <li>Weight: Approx. 2.6 kg</li>
+            <li>Acquisition: Under 2 seconds</li>
+            <li>High-Speed Wi-Fi &amp; Gig-E</li>
+          </ul>
+        </div>
+
+      </div>
+      <div class="page-footer-running">
+        <span>Digital Radiography Systems</span>
+        <span class="page-number">19</span>
+      </div>
+    </div>
+
+    <!-- PAGE 20: DIAGNOSTICS DIVIDER -->
+    <div class="screen-page-indicator">Page 20: Category Cover</div>
+    <div class="a5-page section-divider">
+      <div class="section-splash-tag">Category 03</div>
+      <div class="section-splash-title">Veterinary BP &amp;<br>Diagnostics</div>
+      <div class="section-splash-decor"></div>
+      <div class="section-splash-desc">Dedicated clinical animal blood flow Doppler monitoring equipment.</div>
+    </div>
+
+    <!-- PAGE 21: VET DOppler - SONODOP VET -->
+    <div class="screen-page-indicator">Page 21: Vet Diagnostics</div>
+    <div class="a5-page">
+      <div class="page-header-running">
+        <span class="running-category">Diagnostics</span>
+        <span>Veterinary BP Doppler</span>
+      </div>
+      <div class="page-title">Sonodop Vet System</div>
+      <div class="single-product-container">
+        <div class="single-prod-top-hero">
+          <div class="single-prod-img-wrap">
+            <img src="sonodop-vet.jpg" alt="Sonodop Vet" class="single-prod-img">
+          </div>
+          <div class="single-prod-meta">
+            <span class="single-prod-brand">Sonoray</span>
+            <h3 class="single-prod-title">Sonodop Vet</h3>
+            <span class="single-prod-tagline">Veterinary Blood Flow Doppler</span>
+            <p class="single-prod-desc">Highly sensitive continuous-wave (CW) ultrasonic Doppler equipped with a real-time spectrogram, designed for small, exotic, and avian animal blood pressure checks.</p>
+          </div>
+        </div>
+
+        <div class="single-prod-specs-box">
+          <div class="specs-title">Technical Specifications &amp; Features</div>
+          <ul class="specs-grid">
+            <li><strong>Device Type:</strong> CW Ultrasonic Doppler with Spectrogram</li>
+            <li><strong>Doppler Frequency:</strong> 8 MHz Focused Probe</li>
+            <li><strong>Power Core:</strong> Rechargeable Li-ion Inbuilt Battery</li>
+            <li><strong>Operation:</strong> 35 - 40 Hours Continuous Usage</li>
+            <li><strong>Sphygmomanometer:</strong> Certified 0 - 300 mmHg Manometer</li>
+            <li><strong>Inflatable Pump:</strong> Manual Bulb Pump with Air Valve</li>
+            <li><strong>Cuff Kit:</strong> Multi-size Set (Limbs 3.3cm - 16.8cm)</li>
+            <li><strong>Speaker:</strong> Inbuilt High-fidelity Sound Speaker</li>
+            <li><strong>Outputs:</strong> 3.5mm Stereo Headphone Jack Output</li>
+            <li><strong>Housing:</strong> Robust ABS-PC Medical-grade Plastic</li>
+          </ul>
+          <div class="single-prod-highlight">
+            ✦ The industry standard for precise small animal blood flow monitoring.
+          </div>
+        </div>
+      </div>
+      <div class="page-footer-running">
+        <span>Sonoray Specialized Vet line</span>
+        <span class="page-number">21</span>
+      </div>
+    </div>
+
+    <!-- PAGE 22: BACK COVER -->
+    <div class="screen-page-indicator">Page 22: Back Cover</div>
+    <div class="a5-page cover-back">
+      <div>
+        <div class="back-cover-title">Sonoray<br>Medical Systems</div>
+        <p class="back-cover-subtitle">Your trusted partner in advanced diagnostic equipment, expert maintenance services, and probe restorations.</p>
+        
+        <div class="back-cover-contact-list">
+          <!-- Address -->
+          <div class="back-contact-item">
+            <div class="back-contact-icon">📍</div>
+            <div class="back-contact-details">
+              <h5>Headquarters</h5>
+              <p>No 1, 102nd Street, 15th Sector,<br>K.K Nagar, Nesapakkam,<br>Chennai - 600078, Tamil Nadu, India</p>
+            </div>
+          </div>
+          <!-- Phone -->
+          <div class="back-contact-item">
+            <div class="back-contact-icon">📞</div>
+            <div class="back-contact-details">
+              <h5>Mobile &amp; Support</h5>
+              <p>+91 94440 23689</p>
+            </div>
+          </div>
+          <!-- Email -->
+          <div class="back-contact-item">
+            <div class="back-contact-icon">✉️</div>
+            <div class="back-contact-details">
+              <h5>Email Address</h5>
+              <p>sonoraymedical@gmail.com</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="back-cover-footer">
+        <p>www.sonoraymedicalsystems.in</p>
+        <p style="margin-top: 4px; opacity: 0.7;">© 2026 Sonoray Medical Systems. All rights reserved.</p>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>
