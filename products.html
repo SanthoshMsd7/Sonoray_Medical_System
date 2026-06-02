@@ -56,7 +56,7 @@
            <h3>Ultrasound</h3>
            <ul>
              <li><a href="#" class="portal-link" data-target="us-handheld">Handheld</a></li>
-             <li><a href="#" class="portal-link active-filter" data-target="us-portable">Portable</a></li>
+             <li><a href="#" class="portal-link" data-target="us-portable">Portable</a></li>
              <li><a href="#" class="portal-link" data-target="us-trolley">Trolley</a></li>
            </ul>
         </div>
@@ -83,6 +83,16 @@
 
       <!-- MAIN CONTENT -->
       <main class="portal-content">
+         
+         <!-- WELCOME PANE -->
+         <div id="us-welcome" class="portal-pane" style="display: block; text-align: center; padding: 60px 24px; border: 2px dashed var(--border); border-radius: var(--radius); background: #fff; box-shadow: var(--shadow2);">
+            <div style="font-size: 54px; margin-bottom: 20px; animation: float 4s ease-in-out infinite;">🔍</div>
+            <h2 style="font-family: 'Outfit', sans-serif; font-size: 26px; color: var(--text); margin-bottom: 12px;">Explore Our Products</h2>
+            <p style="color: var(--text2); font-size: 15px; max-width: 480px; margin: 0 auto 24px; line-height: 1.6;">Please select a category from the sidebar menu to view our comprehensive range of medical imaging and diagnostic systems.</p>
+            <div class="prod-highlight" style="display: inline-block; margin: 0 auto; padding: 8px 16px; border-left: 3px solid var(--red);">
+              Select any category (like Handheld, Portable, or X-Rays) to begin.
+            </div>
+         </div>
          
          <!-- ULTRASOUND: HANDHELD -->
          <div id="us-handheld" class="portal-pane" style="display: none;">
@@ -231,7 +241,7 @@
          </div>
 
          <!-- ULTRASOUND: PORTABLE -->
-         <div id="us-portable" class="portal-pane" style="display: block;">
+         <div id="us-portable" class="portal-pane" style="display: none;">
              <div class="section-header" style="text-align: left; margin-bottom: 40px;">
                <span class="section-tag">Ultrasound</span>
                <h2 style="font-size: 32px;">Portable Systems</h2>
