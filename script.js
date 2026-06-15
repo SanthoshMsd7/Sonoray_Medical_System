@@ -133,8 +133,15 @@ if (portalLinks.length > 0) {
       const targetPane = document.getElementById(targetId);
         if (targetPane) {
           targetPane.style.display = 'block';
-          // Always reset scroll to top of the page when changing categories
-          window.scrollTo({ top: 0, behavior: 'smooth' });
+          // Scroll behavior based on viewport width
+          if (window.innerWidth <= 900) {
+            // In mobile view, scroll down to the active product pane
+            const targetOffset = targetPane.getBoundingClientRect().top + window.scrollY - 90;
+            window.scrollTo({ top: targetOffset, behavior: 'smooth' });
+          } else {
+            // On desktop, scroll back to the top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }
         }
     });
   });
