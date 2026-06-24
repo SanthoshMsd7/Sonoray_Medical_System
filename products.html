@@ -40,15 +40,15 @@
   </nav>
 
   <!-- PAGE HEADER -->
-  <section class="page-header" style="padding: 140px 24px 60px; background: linear-gradient(135deg, var(--red-dark), var(--red)); color: #f5e6d0; text-align: center;">
+  <section class="page-header">
     <div class="container">
-      <h1 style="font-family: 'Outfit', sans-serif; font-size: 48px; font-weight: 800; margin-bottom: 16px;">Product Portal</h1>
-      <p style="color: #f7f4f0; font-size: 18px; max-width: 600px; margin: 0 auto; opacity: 0.9;">Explore our comprehensive range of diagnostic equipment, from Ultrasound to Digital X-Rays.</p>
+      <h1>Product Portal</h1>
+      <p>Explore our comprehensive range of diagnostic equipment, from Ultrasound to Digital X-Rays.</p>
     </div>
   </section>
 
   <!-- PORTAL LAYOUT -->
-  <section class="portal-section" style="padding: 60px 0; background: var(--bg);">
+  <section class="portal-section">
     <div class="container portal-layout">
       <!-- SIDEBAR -->
       <aside class="portal-sidebar">
@@ -86,11 +86,11 @@
       <main class="portal-content">
          
          <!-- WELCOME PANE -->
-         <div id="us-welcome" class="portal-pane" style="display: block; text-align: center; padding: 60px 24px; border: 2px dashed var(--border); border-radius: var(--radius); background: #fff; box-shadow: var(--shadow2);">
-            <div style="font-size: 54px; margin-bottom: 20px; animation: float 4s ease-in-out infinite;">🔍</div>
-            <h2 style="font-family: 'Outfit', sans-serif; font-size: 26px; color: var(--text); margin-bottom: 12px;">Explore Our Products</h2>
-            <p style="color: var(--text2); font-size: 15px; max-width: 480px; margin: 0 auto 24px; line-height: 1.6;">Please select a category from the sidebar menu to view our comprehensive range of medical imaging and diagnostic systems.</p>
-            <div class="prod-highlight" style="display: inline-block; margin: 0 auto; padding: 8px 16px; border-left: 3px solid var(--red);">
+         <div id="us-welcome" class="portal-pane welcome-pane">
+            <div class="welcome-icon">🔍</div>
+            <h2>Explore Our Products</h2>
+            <p>Please select a category from the sidebar menu to view our comprehensive range of medical imaging and diagnostic systems.</p>
+            <div class="prod-highlight">
               Select any category (like Handheld, Portable, or X-Rays) to begin.
             </div>
          </div>
@@ -720,7 +720,7 @@
          <div id="diag-monitor" class="portal-pane" style="display: none;">
              <div class="section-header" style="text-align: left; margin-bottom: 40px;">
                <span class="section-tag">Diagnostic Products</span>
-               <h2 style="font-size: 32px;">Patient Monitor System</h2>
+                 <h2 style="font-size: 32px;">Patient Monitor System</h2>
              </div>
              <div class="empty-state"><p><em>Products to be listed soon.</em></p></div>
          </div>
@@ -728,9 +728,162 @@
          <div id="diag-endoscope" class="portal-pane" style="display: none;">
              <div class="section-header" style="text-align: left; margin-bottom: 40px;">
                <span class="section-tag">Diagnostic Products</span>
-               <h2 style="font-size: 32px;">Endoscope</h2>
+               <h2 style="font-size: 32px;">Endoscopes &amp; Workstations</h2>
              </div>
-             <div class="empty-state"><p><em>Products to be listed soon.</em></p></div>
+             
+             <!-- RAE 105 -->
+             <div class="prod-detail-card" id="rae105">
+               <div class="prod-detail-img-wrap">
+                 <img src="rae105.png?v=1" alt="RAE 105 Portable USB Endoscope" class="prod-detail-img"/>
+                 <div class="prod-model-badge">RAE 105</div>
+               </div>
+               <div class="prod-detail-content">
+                 <div class="product-brand-tag">SONORAY</div>
+                 <h3>RAE 105 <span class="prod-type-label">Portable USB Veterinary Endoscope</span></h3>
+                 <p class="prod-applications"><strong>Key Highlights:</strong> An ultra-portable veterinary endoscopy solution connecting directly to tablets or laptops via USB, ideal for quick examinations in small animal practices.</p>
+                 <ul class="prod-features">
+                   <li><strong>Connectivity:</strong> Direct USB-C/USB 2.0 output to Windows/Android devices</li>
+                   <li><strong>Probe Diameter:</strong> Slim 5.5mm insertion tube for patient comfort</li>
+                   <li><strong>Working Length:</strong> 1000mm flexible insertion tube</li>
+                   <li><strong>Illumination:</strong> Adjustable 6-LED cluster light source</li>
+                   <li><strong>Resolution:</strong> High-definition micro-camera sensor</li>
+                   <li><strong>Waterproofing:</strong> IP67 rated insertion tube and camera head</li>
+                 </ul>
+                 <a href="index.html#contact" class="btn btn-primary">Enquire Now</a>
+               </div>
+             </div>
+
+             <!-- RAE 107 -->
+             <div class="prod-detail-card reverse" id="rae107">
+               <div class="prod-detail-img-wrap">
+                 <img src="rae107.png?v=1" alt="RAE 107 Portable WiFi Endoscope" class="prod-detail-img"/>
+                 <div class="prod-model-badge">RAE 107</div>
+               </div>
+               <div class="prod-detail-content">
+                 <div class="product-brand-tag">SONORAY</div>
+                 <h3>RAE 107 <span class="prod-type-label">Wireless Portable Veterinary Endoscope</span></h3>
+                 <p class="prod-applications"><strong>Key Highlights:</strong> State-of-the-art wireless veterinary endoscope transmitting high-definition video directly to iOS and Android smartphones or tablets.</p>
+                 <ul class="prod-features">
+                   <li><strong>Connectivity:</strong> Built-in high-speed Wi-Fi module (up to 10m range)</li>
+                   <li><strong>Probe Diameter:</strong> 5.5mm slim outer diameter</li>
+                   <li><strong>Battery:</strong> Rechargeable lithium battery with 2+ hours operating time</li>
+                   <li><strong>Working Length:</strong> 1500mm flexible insertion tube</li>
+                   <li><strong>Illumination:</strong> Variable-intensity LED lights</li>
+                   <li><strong>Software:</strong> Compatible with dedicated veterinary imaging app</li>
+                 </ul>
+                 <a href="index.html#contact" class="btn btn-outline">Enquire Now</a>
+               </div>
+             </div>
+
+             <!-- RAE 109 -->
+             <div class="prod-detail-card" id="rae109">
+               <div class="prod-detail-img-wrap">
+                 <img src="rae109.jpg?v=1" alt="RAE 109 Portable USB Gastroscope" class="prod-detail-img"/>
+                 <div class="prod-model-badge">RAE 109</div>
+               </div>
+               <div class="prod-detail-content">
+                 <div class="product-brand-tag">SONORAY</div>
+                 <h3>RAE 109 <span class="prod-type-label">Portable Veterinary Video Gastroscope</span></h3>
+                 <p class="prod-applications"><strong>Key Highlights:</strong> Designed for upper and lower gastrointestinal endoscopy in companion animals, combining a professional-grade insertion tube with simple USB connectivity.</p>
+                 <ul class="prod-features">
+                   <li><strong>Working Channel:</strong> 2.0mm biopsy/instrument channel</li>
+                   <li><strong>Probe Diameter:</strong> 8.0mm outer diameter</li>
+                   <li><strong>Working Length:</strong> 1500mm length with 4-way angulation</li>
+                   <li><strong>Angulation Range:</strong> Up 180°, Down 130°, Left/Right 120°</li>
+                   <li><strong>Connectivity:</strong> Plug-and-play USB output</li>
+                   <li><strong>Integrated Valves:</strong> Air/Water feeding and suction ports</li>
+                 </ul>
+                 <a href="index.html#contact" class="btn btn-primary">Enquire Now</a>
+               </div>
+             </div>
+
+             <!-- RAE 500 -->
+             <div class="prod-detail-card reverse" id="rae500">
+               <div class="prod-detail-img-wrap">
+                 <img src="rae500.png?v=1" alt="RAE 500 Portable Smart Otoscope" class="prod-detail-img"/>
+                 <div class="prod-model-badge">RAE 500</div>
+               </div>
+               <div class="prod-detail-content">
+                 <div class="product-brand-tag">SONORAY</div>
+                 <h3>RAE 500 <span class="prod-type-label">Handheld Wireless Veterinary Video Otoscope</span></h3>
+                 <p class="prod-applications"><strong>Key Highlights:</strong> A compact, ergonomic video otoscope that provides crystal-clear digital visualization of the external auditory canal and tympanic membrane.</p>
+                 <ul class="prod-features">
+                   <li><strong>Connectivity:</strong> High-definition Wi-Fi digital transmission</li>
+                   <li><strong>Illumination:</strong> 6 ring-mounted bright LEDs</li>
+                   <li><strong>Probe Specs:</strong> 3.9mm ultra-slim probe head</li>
+                   <li><strong>Compatibility:</strong> Specially designed veterinary specula attachments</li>
+                   <li><strong>Capture Support:</strong> One-click snapshot and video recording via mobile app</li>
+                   <li><strong>Battery:</strong> Built-in rechargeable battery for up to 3 hours of operation</li>
+                 </ul>
+                 <a href="index.html#contact" class="btn btn-outline">Enquire Now</a>
+               </div>
+             </div>
+
+             <!-- VET 600 -->
+             <div class="prod-detail-card" id="vet600">
+               <div class="prod-detail-img-wrap">
+                 <img src="vet600.jpg?v=1" alt="VET 600 Diagnostic & Treatment Platform" class="prod-detail-img"/>
+                 <div class="prod-model-badge">VET 600</div>
+               </div>
+               <div class="prod-detail-content">
+                 <div class="product-brand-tag">SONORAY</div>
+                 <h3>VET 600 <span class="prod-type-label">Multi-Functional Endoscopy &amp; Diagnostic Station</span></h3>
+                 <p class="prod-applications"><strong>Key Highlights:</strong> A comprehensive diagnostic and treatment platform integrating light source, camera, and display unit in a single robust medical-grade unit.</p>
+                 <ul class="prod-features">
+                   <li><strong>Display:</strong> Integrated 15-inch high-resolution medical LCD monitor</li>
+                   <li><strong>Camera System:</strong> Full HD video processing unit</li>
+                   <li><strong>Light Source:</strong> High-intensity 80W LED light source (5500K color temp)</li>
+                   <li><strong>Storage:</strong> Built-in digital workstation for patient records, images, and video recording</li>
+                   <li><strong>Ports:</strong> Dual HDMI/USB outputs for external displays and storage devices</li>
+                   <li><strong>Compatibility:</strong> Works seamlessly with both flexible and rigid scopes</li>
+                 </ul>
+                 <a href="index.html#contact" class="btn btn-primary">Enquire Now</a>
+               </div>
+             </div>
+
+             <!-- JTA 300 -->
+             <div class="prod-detail-card reverse" id="jta300">
+               <div class="prod-detail-img-wrap">
+                 <img src="jta300.png?v=1" alt="JTA 300 Veterinary Suction Pump" class="prod-detail-img"/>
+                 <div class="prod-model-badge">JTA 300</div>
+               </div>
+               <div class="prod-detail-content">
+                 <div class="product-brand-tag">SONORAY</div>
+                 <h3>JTA 300 <span class="prod-type-label">Veterinary Aspiration &amp; Suction System</span></h3>
+                 <p class="prod-applications"><strong>Key Highlights:</strong> Heavy-duty, high-vacuum veterinary aspirator designed for endoscopy support, surgical fluids extraction, and general clinical suction needs.</p>
+                 <ul class="prod-features">
+                   <li><strong>Vacuum Range:</strong> Adjustable high-vacuum (up to -0.09 MPa)</li>
+                   <li><strong>Flow Rate:</strong> Max flow rate ≥ 20 L/min for quick fluid clearance</li>
+                   <li><strong>Storage:</strong> Double 2500ml shatterproof bottles with overflow protection</li>
+                   <li><strong>Noise Level:</strong> Low-noise operation (≤ 55 dB)</li>
+                   <li><strong>Pump Mechanism:</strong> Maintenance-free oil-free piston pump</li>
+                   <li><strong>Foot Switch:</strong> Ergonomic pedal control for hands-free surgical operation</li>
+                 </ul>
+                 <a href="index.html#contact" class="btn btn-outline">Enquire Now</a>
+               </div>
+             </div>
+
+             <!-- JTA 310 -->
+             <div class="prod-detail-card" id="jta310">
+               <div class="prod-detail-img-wrap">
+                 <img src="jta310.png?v=1" alt="JTA 310 Endoscopy Workstation" class="prod-detail-img"/>
+                 <div class="prod-model-badge">JTA 310</div>
+               </div>
+               <div class="prod-detail-content">
+                 <div class="product-brand-tag">SONORAY</div>
+                 <h3>JTA 310 <span class="prod-type-label">Mobile Veterinary Endoscopy Workstation Trolley</span></h3>
+                 <p class="prod-applications"><strong>Key Highlights:</strong> Professional-grade mobile workstation trolley designed specifically to organize and transport complex endoscopy systems and accessories.</p>
+                 <ul class="prod-features">
+                   <li><strong>Structure:</strong> Robust steel-aluminum frame with anti-static medical casters</li>
+                   <li><strong>Shelving:</strong> Multiple adjustable shelves with safety rails for monitors and light sources</li>
+                   <li><strong>Scope Holders:</strong> Dedicated dual-side flexible endoscope hanging brackets</li>
+                   <li><strong>Storage:</strong> Lockable drawer for biopsy forceps and accessories</li>
+                   <li><strong>Power Management:</strong> Integrated multi-outlet power strip with surge protection</li>
+                   <li><strong>Mobility:</strong> 360-degree rotating wheels with independent locking brakes</li>
+                 </ul>
+                 <a href="index.html#contact" class="btn btn-primary">Enquire Now</a>
+               </div>
+             </div>
          </div>
 
       </main>

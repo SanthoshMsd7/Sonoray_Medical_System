@@ -4,10 +4,14 @@
 const hamburger = document.getElementById('hamburger');
 const mobileMenu = document.getElementById('mobile-menu');
 hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('active');
   mobileMenu.classList.toggle('open');
 });
 mobileMenu.querySelectorAll('a').forEach(a => {
-  a.addEventListener('click', () => mobileMenu.classList.remove('open'));
+  a.addEventListener('click', () => {
+    hamburger.classList.remove('active');
+    mobileMenu.classList.remove('open');
+  });
 });
 
 // Scroll-reveal animation
@@ -185,7 +189,13 @@ const productsByClassification = {
     'Sonodop Vet (BP Doppler)',
     'Vet ECG (Upcoming)',
     'Patient Monitor System (Upcoming)',
-    'Endoscope (Upcoming)'
+    'RAE 105 Portable USB Endoscope',
+    'RAE 107 Portable WiFi Endoscope',
+    'RAE 109 Portable USB Gastroscope',
+    'RAE 500 Portable Smart Otoscope',
+    'VET 600 Diagnostic & Treatment Platform',
+    'JTA 300 Veterinary Suction Pump',
+    'JTA 310 Endoscopy Workstation'
   ],
   'others': [
     'Full Product Demo / Site Visit',
