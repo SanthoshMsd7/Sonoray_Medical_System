@@ -108,7 +108,7 @@ body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--tex
 
 .hero-visual { flex: 1; display: flex; justify-content: center; align-items: center; position: relative; min-height: 500px; }
 .hero-img-wrap { position: relative; display: flex; justify-content: center; align-items: center; }
-.hero-img { width: 360px; max-width: 100%; border-radius: 24px; position: relative; z-index: 2; filter: drop-shadow(0 20px 60px rgba(204,0,0,0.2)); animation: float 4s ease-in-out infinite; }
+.hero-img { width: 540px; max-width: 100%; border-radius: 24px; position: relative; z-index: 2; filter: drop-shadow(0 20px 60px rgba(204,0,0,0.2)); animation: float 4s ease-in-out infinite; }
 @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-16px)} }
 
 .hero-img-ring { position: absolute; border-radius: 50%; border: 1.5px solid rgba(204,0,0,0.12); animation: ripple 4s ease-out infinite; }
@@ -345,7 +345,7 @@ footer * { --text2: rgba(245,230,208,0.55); }
   .hero-actions { justify-content: center; }
   .hero-stats { justify-content: center; }
   .hero-visual { min-height: 300px; }
-  .hero-img { width: 280px; }
+  .hero-img { width: 440px; }
   .hero-img-ring { display: none; }
   .badge-ai, .badge-fda { display: none; }
   .nav-links, .nav-cta { display: none; }
