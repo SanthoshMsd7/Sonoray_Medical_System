@@ -73,7 +73,7 @@ body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--tex
 /* ── HERO ── */
 #hero {
   position: relative; min-height: 100vh; display: flex; align-items: center;
-  padding: 120px 24px 80px; max-width: 1200px; margin: 0 auto; gap: 60px;
+  padding: 120px 24px 80px; max-width: 1320px; margin: 0 auto; gap: 40px;
 }
 .hero-bg { position: fixed; inset: 0; z-index: -1; pointer-events: none; overflow: hidden; background: linear-gradient(135deg, #1a0810 0%, #2d0f1c 50%, #3d1525 100%); }
 .hero-grid {
@@ -86,7 +86,7 @@ body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--tex
 .glow-1 { width: 600px; height: 600px; background: rgba(204,0,0,0.07); top: -150px; right: -100px; }
 .glow-2 { width: 400px; height: 400px; background: rgba(204,0,0,0.05); bottom: 0; left: -80px; }
 
-.hero-content { flex: 1; max-width: 580px; }
+.hero-content { flex: 1; max-width: 520px; }
 .hero-badge {
   display: inline-flex; align-items: center; gap: 8px;
   background: rgba(245,230,208,0.1); border: 1px solid rgba(245,230,208,0.2);
@@ -106,9 +106,9 @@ body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--tex
 .stat-label { font-size: 12px; color: #a08070; font-weight: 500; }
 .stat-divider { width: 1px; height: 40px; background: rgba(245,230,208,0.2); }
 
-.hero-visual { flex: 1; display: flex; justify-content: center; align-items: center; position: relative; min-height: 500px; }
+.hero-visual { flex: 1.4; display: flex; justify-content: center; align-items: center; position: relative; min-height: 500px; }
 .hero-img-wrap { position: relative; display: flex; justify-content: center; align-items: center; }
-.hero-img { width: 540px; max-width: 100%; border-radius: 24px; position: relative; z-index: 2; filter: drop-shadow(0 20px 60px rgba(204,0,0,0.2)); animation: float 4s ease-in-out infinite; }
+.hero-img { width: 680px; max-width: 100%; border-radius: 24px; position: relative; z-index: 2; filter: drop-shadow(0 20px 60px rgba(204,0,0,0.2)); animation: float 4s ease-in-out infinite; }
 @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-16px)} }
 
 .hero-img-ring { position: absolute; border-radius: 50%; border: 1.5px solid rgba(204,0,0,0.12); animation: ripple 4s ease-out infinite; }
